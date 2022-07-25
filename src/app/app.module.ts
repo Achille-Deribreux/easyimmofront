@@ -12,6 +12,7 @@ import { FeeComponent } from './fee/components/fee/fee.component';
 import { FeeListComponent } from './fee/components/fee-list/fee-list.component';
 import { ReservationComponent } from './reservation/components/reservation/reservation.component';
 import { ReservationListComponent } from './reservation/components/reservation-list/reservation-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReservationListComponent } from './reservation/components/reservation-l
     FeeComponent,
     FeeListComponent,
     ReservationComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
