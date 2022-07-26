@@ -15,6 +15,7 @@ import { ReservationListComponent } from './reservation/components/reservation-l
 import { HeaderComponent } from './header/header.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import * as fr from '@angular/common/locales/fr';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
