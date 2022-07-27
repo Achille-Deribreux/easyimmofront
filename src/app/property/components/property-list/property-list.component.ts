@@ -9,12 +9,12 @@ import {PropertyService} from "../../property.service";
 })
 export class PropertyListComponent implements OnInit {
 
-  property!: Property[];
+  properties!: Property[];
 
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
-    this.property = this.propertyService.getAllProperties();
+    this.properties = this.propertyService.getAllProperties();
   }
 
 }

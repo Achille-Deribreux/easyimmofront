@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PropertyService} from "../../property.service";
 import {Property} from "../../property.model";
 
@@ -9,12 +9,12 @@ import {Property} from "../../property.model";
 })
 export class PropertyComponent implements OnInit {
 
-  @Input() property!: Property;
+  //property!: Property;
 
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
-    this.propertyService.getProperty(this.property.id);
+    //this.propertyService.getProperty(this.property.id);
   }
 
 }
