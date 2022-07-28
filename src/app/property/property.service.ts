@@ -8,9 +8,9 @@ export class PropertyService {
 
   constructor() { }
 
-  demoProperty1: PropertySummary = new PropertySummary(1, "123 Main St", "Property 1");
-  demoProperty2: PropertySummary = new PropertySummary(2, "456 Main St", "Property 2");
-  demoProperty3: PropertySummary = new PropertySummary(3, "789 Main St", "Property 3");
+  demoProperty1: PropertySummary = new PropertySummary(1, "APARTMENT","123 Main St", "Property 1");
+  demoProperty2: PropertySummary = new PropertySummary(2, "HOUSE","456 Main St", "Property 2");
+  demoProperty3: PropertySummary = new PropertySummary(3, "HOUSE","789 Main St", "Property 3");
   demoProperties: PropertySummary[] = [this.demoProperty1, this.demoProperty2, this.demoProperty3];
 
   getAllProperties() : PropertySummary[] {

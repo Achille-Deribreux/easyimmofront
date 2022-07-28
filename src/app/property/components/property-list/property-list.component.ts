@@ -10,6 +10,7 @@ import {PropertyService} from "../../property.service";
 export class PropertyListComponent implements OnInit {
 
   properties!: PropertySummary[];
+  displayedColumns: string[] = ['type', 'name', 'address'];
 
   constructor(private propertyService: PropertyService) { }
 

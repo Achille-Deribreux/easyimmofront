@@ -16,7 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatTableModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
