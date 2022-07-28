@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Property} from "./property.model";
+import {PropertySummary} from "./models/property-summary.model";
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +8,12 @@ export class PropertyService {
 
   constructor() { }
 
-  demoProperty1: Property = new Property(1, "123 Main St", "Property 1", 100000, "APPARTMENT", "SHORT");
-  demoProperty2: Property = new Property(2, "456 Main St", "Property 2", 200000, "HOUSE", "LONG");
-  demoProperty3: Property = new Property(3, "789 Main St", "Property 3", 300000, "HOUSE", "LONG");
-  demoProperties: Property[] = [this.demoProperty1, this.demoProperty2, this.demoProperty3];
+  demoProperty1: PropertySummary = new PropertySummary(1, "123 Main St", "Property 1");
+  demoProperty2: PropertySummary = new PropertySummary(2, "456 Main St", "Property 2");
+  demoProperty3: PropertySummary = new PropertySummary(3, "789 Main St", "Property 3");
+  demoProperties: PropertySummary[] = [this.demoProperty1, this.demoProperty2, this.demoProperty3];
 
-  getAllProperties() : Property[] {
+  getAllProperties() : PropertySummary[] {
     //TODO: http call to get all properties
     return this.demoProperties;
   }
@@ -23,12 +23,12 @@ export class PropertyService {
     return this.demoProperties.find(property => property.id === id);
   }
 
-  addProperty(property: Property) {
+  addProperty(property: PropertySummary) {
     //TODO make http call to add property
     this.demoProperties.push(property);
   }
 
-  updateProperty(property: Property) {
+  updateProperty(property: PropertySummary) {
     //TODO make http call to update property
     let index = this.demoProperties.findIndex(p => p.id === property.id);
     this.demoProperties[index] = property;

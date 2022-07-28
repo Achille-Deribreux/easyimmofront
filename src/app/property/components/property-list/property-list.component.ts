@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Property} from "../../property.model";
+import {PropertySummary} from "../../models/property-summary.model";
 import {PropertyService} from "../../property.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {PropertyService} from "../../property.service";
 })
 export class PropertyListComponent implements OnInit {
 
-  properties!: Property[];
+  properties!: PropertySummary[];
 
   constructor(private propertyService: PropertyService) { }
 

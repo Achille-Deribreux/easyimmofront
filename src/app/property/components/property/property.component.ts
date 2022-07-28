@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertyService} from "../../property.service";
-import {Property} from "../../property.model";
+import {PropertySummary} from "../../models/property-summary.model";
 
 @Component({
   selector: 'app-property',
