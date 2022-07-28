@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Fee} from "./fee.model";
+import {FeeSummary} from "./model/fee-summary.model";
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,14 @@ export class FeeService {
 
   demoFees: Fee[] = [this.demoFee1, this.demoFee2, this.demoFee3, this.demoFee4, this.demoFee5, this.demoFee6, this.demoFee7, this.demoFee8, this.demoFee9];
 
-  getAllFees() : Fee[] {
+  demoFeeSummary1 :FeeSummary = new FeeSummary(1, new Date("2019-01-01"), 332, "Supplier 1");
+  demoFeeSummary2 :FeeSummary = new FeeSummary(2, new Date("2020-01-01"), 2311, "Supplier 1");
+  demoFeeSummary3 :FeeSummary = new FeeSummary(3, new Date("2022-01-01"), 1313, "Supplier 1");
+  demoFeeSummarys: FeeSummary[] = [this.demoFeeSummary1, this.demoFeeSummary2, this.demoFeeSummary3];
+
+  getAllFees() : FeeSummary[] {
     //TODO: http call to get all fees
-    return this.demoFees;
+    return this.demoFeeSummarys;
   }
 
   getFeesForProperty(id: number) : Fee[] {
