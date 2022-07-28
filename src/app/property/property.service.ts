@@ -10,8 +10,6 @@ import {IncomeSummary} from "../income/models/income-summary.model";
 })
 export class PropertyService {
 
-  constructor() { }
-
   demoProperty1: PropertySummary = new PropertySummary(1, "APARTMENT","123 Main St", "Property 1");
   demoProperty2: PropertySummary = new PropertySummary(2, "HOUSE","456 Main St", "Property 2");
   demoProperty3: PropertySummary = new PropertySummary(3, "HOUSE","789 Main St", "Property 3");
@@ -45,22 +43,5 @@ export class PropertyService {
       feeList,
       incomeList)
     return demoFullProperty;
-  }
-
-  addProperty(property: PropertySummary) {
-    //TODO make http call to add property
-    this.demoProperties.push(property);
-  }
-
-  updateProperty(property: PropertySummary) {
-    //TODO make http call to update property
-    let index = this.demoProperties.findIndex(p => p.id === property.id);
-    this.demoProperties[index] = property;
-  }
-
-  deleteProperty(id: number) {
-    //TODO make http call to delete property
-    let index = this.demoProperties.findIndex(p => p.id === id);
-    this.demoProperties.splice(index, 1);
   }
 }
