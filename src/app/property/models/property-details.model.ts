@@ -1,7 +1,7 @@
 import {BankLoanSummary} from "./bank-loan.summary";
 import {FeeSummary} from "../../fee/model/fee-summary.model";
 import {IncomeSummary} from "../../income/models/income-summary.model";
-import {ReservationSummary} from "../../reservation/reservation-summary.model";
+import {ReservationSummary} from "../../reservation/model/reservation-summary.model";
 
 export class PropertyDetails {
   constructor(
