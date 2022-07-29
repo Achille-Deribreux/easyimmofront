@@ -19,8 +19,4 @@ export class IncomeListComponent implements OnInit {
     this.incomes = this.incomeService.getAllIncomes();
   }
 
-  showIncome(id:number) {
-    this.router.navigateByUrl('/income/'+id);
-  }
-
 }

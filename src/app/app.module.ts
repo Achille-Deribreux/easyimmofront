@@ -21,6 +21,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {MatListModule} from "@angular/material/list";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { IncomeTableComponent } from './income/income-table/income-table.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     FeeListComponent,
     ReservationComponent,
     ReservationListComponent,
-    HeaderComponent
+    HeaderComponent,
+    IncomeTableComponent
   ],
   imports: [
     BrowserModule,

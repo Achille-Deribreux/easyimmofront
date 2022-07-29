@@ -1,3 +1,4 @@
+<script src="../../../income/components/income-list/income-list.component.ts"></script>
 <link rel="stylesheet" href="property.component.scss">
 <ng-container>
   <div class="detailsAndStatsContainer">
@@ -39,32 +40,7 @@
   <div class="listsContainer">
     <div *ngIf=" property.incomes!=null && property.incomes.length>0">
       <h3>Incomes : </h3>
-      <table mat-table [dataSource]="property.incomes" class="mat-elevation-z8">
-
-        <ng-container matColumnDef="date">
-          <th mat-header-cell *matHeaderCellDef> Date </th>
-          <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="description">
-          <th mat-header-cell *matHeaderCellDef> Description </th>
-          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef> Price </th>
-          <td mat-cell *matCellDef="let element"> {{element.amount | currency : 'EUR'}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="button">
-          <th mat-header-cell *matHeaderCellDef> See :  </th>
-          <td mat-cell *matCellDef="let element">
-            <mat-icon (click)="showIncome(element.id)">visibility</mat-icon>
-          </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedIncomeColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedIncomeColumns;"></tr>
-      </table>
+      <app-income-table [incomeList]="property.incomes" [displayedColumns]="displayedIncomeColumns"> </app-income-table>
     </div>
 
     <div *ngIf=" property.fees!=null && property.fees.length>0">

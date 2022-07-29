@@ -12,7 +12,7 @@ export class PropertyComponent implements OnInit {
 
   property!: PropertyDetails;
 
-  displayedIncomeColumns: string[] = ['date','description',"price","button"];
+  displayedIncomeColumns: string[] = ['date','description',"amount","button"];
   displayedFeesColumns: string[] = ['date','supplier',"price","button"];
   displayedReservationColumns: string[] = ['fromDate','toDate',"price","button"];
 
