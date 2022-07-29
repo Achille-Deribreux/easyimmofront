@@ -22,6 +22,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatListModule} from "@angular/material/list";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
+import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { IncomeTableComponent } from './income/components/income-table/income-ta
     ReservationComponent,
     ReservationListComponent,
     HeaderComponent,
-    IncomeTableComponent
+    IncomeTableComponent,
+    FeeTableComponent
   ],
   imports: [
     BrowserModule,

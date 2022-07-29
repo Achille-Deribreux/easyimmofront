@@ -13,7 +13,7 @@ export class PropertyComponent implements OnInit {
   property!: PropertyDetails;
 
   displayedIncomeColumns: string[] = ['date','description',"amount","button"];
-  displayedFeesColumns: string[] = ['date','supplier',"price","button"];
+  displayedFeesColumns: string[] = ['date','supplier',"amount","button"];
   displayedReservationColumns: string[] = ['fromDate','toDate',"price","button"];
 
   constructor(private propertyService: PropertyService, private router : Router) { }
@@ -24,10 +24,6 @@ export class PropertyComponent implements OnInit {
 
   getBankLoanPercentage(): number {
     return (this.property.bankLoanSummary.refundedAmount/this.property.bankLoanSummary.totalAmount)*100;
-  }
-
-  showFee(id:number) {
-    this.router.navigateByUrl('/fee/'+id);
   }
 
   showReservation(id:number) {
