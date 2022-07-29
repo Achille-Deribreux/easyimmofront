@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import {IncomeSummary} from "./models/income-summary.model";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class IncomeService {
+
+  constructor(private router : Router) { }
 
   demoIncomeSummary1 : IncomeSummary = new IncomeSummary(1, new Date("2020-01-01"),1341,"Income 1 for property 1" );
   demoIncomeSummary2: IncomeSummary = new IncomeSummary(2, new Date("2020-01-02"),453,"Income 2 for property 1");
@@ -14,5 +17,9 @@ export class IncomeService {
   getAllIncomes() : IncomeSummary[] {
     //TODO: http call to get all properties
     return this.demoIncomeSummaries;
+  }
+
+  showIncome(id:number) {
+    this.router.navigateByUrl('/income/'+id);
   }
 }

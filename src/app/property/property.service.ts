@@ -4,6 +4,7 @@ import {PropertyDetails} from "./models/property-details.model";
 import {BankLoanSummary} from "./models/bank-loan.summary";
 import {FeeSummary} from "../fee/model/fee-summary.model";
 import {IncomeSummary} from "../income/models/income-summary.model";
+import {ReservationSummary} from "../reservation/model/reservation-summary.model";
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,9 @@ export class PropertyService {
     let income3 : IncomeSummary = new IncomeSummary(1,new Date(),100,"Income 3");
     let incomeList: IncomeSummary[] = [income1, income2, income3];
 
+    let reservationSummary : ReservationSummary = new ReservationSummary(1,"house 1",new Date(),new Date(),100);
+    let reservationList: ReservationSummary[] = [reservationSummary];
+
     let demoFullProperty: PropertyDetails = new PropertyDetails(
       1,
       "123 main st",
@@ -45,7 +49,8 @@ export class PropertyService {
       250,
       1000,
       feeList,
-      incomeList)
+      incomeList,
+      reservationList)
     return demoFullProperty;
   }
 }
