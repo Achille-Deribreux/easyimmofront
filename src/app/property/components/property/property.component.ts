@@ -26,10 +26,6 @@ export class PropertyComponent implements OnInit {
     return (this.property.bankLoanSummary.refundedAmount/this.property.bankLoanSummary.totalAmount)*100;
   }
 
-  showIncome(id:number) {
-    this.router.navigateByUrl('/income/'+id);
-  }
-
   showFee(id:number) {
     this.router.navigateByUrl('/fee/'+id);
   }
