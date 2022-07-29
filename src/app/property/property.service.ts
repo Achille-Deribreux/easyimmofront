@@ -20,7 +20,7 @@ export class PropertyService {
     return this.demoProperties;
   }
 
-  getProperty(id: number) {
+  getProperty(id: number) : PropertyDetails {
      //TODO make http call to get property with id and precise return type
     let fee1 : FeeSummary = new FeeSummary(1,new Date(),100,"Supplier 1");
     let fee2 : FeeSummary = new FeeSummary(2,new Date(),200,"Supplier 2");

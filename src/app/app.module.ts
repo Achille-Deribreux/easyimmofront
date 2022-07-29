@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -34,14 +35,15 @@ import {HttpClientModule} from "@angular/common/http";
     ReservationListComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    HttpClientModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        HttpClientModule,
+        MatIconModule,
+        MatListModule
+    ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],

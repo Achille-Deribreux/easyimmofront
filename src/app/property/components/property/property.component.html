@@ -1,1 +1,18 @@
-<p> property works! </p>
+<link rel="stylesheet" href="property.component.scss">
+<ng-container>
+  <div class="detailsAndStatsContainer">
+    <div>
+      <h3>Property Details</h3>
+      <mat-list>
+        <mat-list-item><strong>Nom :</strong> {{property.name}}</mat-list-item>
+        <mat-list-item><strong>Address :</strong> {{property.address}}</mat-list-item>
+        <mat-list-item><strong>Rent Type :</strong> {{property.rentType}}</mat-list-item>
+        <mat-list-item><strong>Type :</strong> {{property.type}}</mat-list-item>
+        <mat-list-item><strong>Buy Price :</strong> {{property.buyPrice | currency : 'EUR'}}</mat-list-item>
+      </mat-list>
+    </div>
+    <div>
+      <h3>Property Stats</h3>
+    </div>
+  </div>
+</ng-container>
