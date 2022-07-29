@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertyService} from "../../property.service";
 import {PropertyDetails} from "../../models/property-details.model";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-property',
@@ -16,7 +15,7 @@ export class PropertyComponent implements OnInit {
   displayedFeesColumns: string[] = ['date','supplier',"amount","button"];
   displayedReservationColumns: string[] = ['fromDate','toDate',"price","button"];
 
-  constructor(private propertyService: PropertyService, private router : Router) { }
+  constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
     this.property = this.propertyService.getProperty(1);
@@ -24,10 +23,6 @@ export class PropertyComponent implements OnInit {
 
   getBankLoanPercentage(): number {
     return (this.property.bankLoanSummary.refundedAmount/this.property.bankLoanSummary.totalAmount)*100;
-  }
-
-  showReservation(id:number) {
-    this.router.navigateByUrl('/reservation/'+id);
   }
 
 }
