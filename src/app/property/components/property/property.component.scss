@@ -5,7 +5,7 @@
 
   div{
     border: 1px solid black;
-    width: 100%;
+    width: 90%;
     margin: 1rem;
     padding: 1rem;
   }
@@ -18,5 +18,16 @@
    strong{
     font-size: large;
     margin: 0 0.5rem;
+  }
+
+  mat-progress-bar{
+    margin: 1rem 0;
+  }
+
+  .subdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 }

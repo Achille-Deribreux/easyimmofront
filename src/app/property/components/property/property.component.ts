@@ -17,4 +17,8 @@ export class PropertyComponent implements OnInit {
     this.property = this.propertyService.getProperty(1);
   }
 
+  getBankLoanPercentage(): number {
+    return (this.property.bankLoanSummary.refundedAmount/this.property.bankLoanSummary.totalAmount)*100;
+  }
+
 }

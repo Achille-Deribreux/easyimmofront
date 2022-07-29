@@ -20,6 +20,7 @@ import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {MatListModule} from "@angular/material/list";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -35,15 +36,16 @@ import {MatListModule} from "@angular/material/list";
     ReservationListComponent,
     HeaderComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatTableModule,
-        HttpClientModule,
-        MatIconModule,
-        MatListModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    HttpClientModule,
+    MatIconModule,
+    MatListModule,
+    MatProgressBarModule
+  ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],

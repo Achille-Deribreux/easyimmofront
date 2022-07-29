@@ -12,6 +12,10 @@ export class PropertyDetails {
     public type: string,
     public buyPrice: number,
     public bankLoanSummary: BankLoanSummary,
+    public yearlyFees:number,
+    public yearlyIncomes:number,
+    public monthlyFees:number,
+    public monthlyIncomes:number,
     public fees: FeeSummary[],
     public incomes: IncomeSummary[],
     public reservations?: ReservationSummary[]

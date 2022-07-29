@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="property.component.scss">
 <ng-container>
   <div class="detailsAndStatsContainer">
-    <div>
+    <div class="subdiv">
       <h3>Property Details</h3>
       <mat-list>
         <mat-list-item><strong>Nom :</strong> {{property.name}}</mat-list-item>
@@ -10,9 +10,29 @@
         <mat-list-item><strong>Type :</strong> {{property.type}}</mat-list-item>
         <mat-list-item><strong>Buy Price :</strong> {{property.buyPrice | currency : 'EUR'}}</mat-list-item>
       </mat-list>
+
+      <div *ngIf="property.bankLoanSummary!=null">
+        <h4>Bank Loan : </h4>
+        <mat-progress-bar mode="determinate" [value]="getBankLoanPercentage()"> </mat-progress-bar>
+        <p><strong>Total amount :</strong> {{property.bankLoanSummary.totalAmount | currency : 'EUR'}}</p>
+        <p><strong>Due amount :</strong> {{property.bankLoanSummary.dueAmount | currency : 'EUR'}}</p>
+        <p><strong>Refunded amount :</strong> {{property.bankLoanSummary.refundedAmount | currency : 'EUR'}}</p>
+      </div>
     </div>
-    <div>
+    <div class="subdiv">
       <h3>Property Stats</h3>
+
+      <div>
+        <h4>Incomes : </h4>
+        <p><strong>Yearly incomes :</strong> {{property.yearlyIncomes | currency : 'EUR'}}</p>
+        <p><strong>Monthly incomes :</strong> {{property.monthlyIncomes | currency : 'EUR'}}</p>
+      </div>
+
+      <div>
+        <h4>Fees : </h4>
+        <p><strong>Yearly fees :</strong> {{property.yearlyFees | currency : 'EUR'}}</p>
+        <p><strong>Monthly fees :</strong> {{property.monthlyFees | currency : 'EUR'}}</p>
+      </div>
     </div>
   </div>
 </ng-container>

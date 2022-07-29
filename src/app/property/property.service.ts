@@ -40,6 +40,10 @@ export class PropertyService {
       "APARTMENT",
       100000,
       new BankLoanSummary(200000,27000,163000),
+      1250,
+      6500,
+      250,
+      1000,
       feeList,
       incomeList)
     return demoFullProperty;
