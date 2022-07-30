@@ -18,11 +18,16 @@ export class PropertyComponent implements OnInit {
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
-    this.property = this.propertyService.getProperty(1);
+    this.propertyService.getProperty(1).subscribe({
+      next: (property: PropertyDetails) => {
+        this.property = property;
+      },
+     error: (err) => {console.log(err);}
+    });
   }
 
-  getBankLoanPercentage(): number {
-    return (this.property.bankLoanSummary.refundedAmount/this.property.bankLoanSummary.totalAmount)*100;
+  getBankLoanPercentage(refundedAmount: number, totalAmount : number): number {
+    return (refundedAmount/totalAmount)*100;
   }
 
 }

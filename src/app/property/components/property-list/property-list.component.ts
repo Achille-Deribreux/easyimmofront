@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PropertySummary} from "../../models/property-summary.model";
 import {PropertyService} from "../../property.service";
 import {Router} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-property-list',
@@ -10,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class PropertyListComponent implements OnInit {
 
-  properties!: PropertySummary[];
+  properties!: Observable<PropertySummary[]>;
   displayedColumns: string[] = ['type', 'name', 'address',"button"];
 
   constructor(private propertyService: PropertyService, private router : Router) { }
