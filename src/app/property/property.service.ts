@@ -4,6 +4,7 @@ import {PropertyDetails} from "./models/property-details.model";
 import {BankLoanSummary} from "./models/bank-loan.summary";
 import {FeeSummary} from "../fee/model/fee-summary.model";
 import {IncomeSummary} from "../income/models/income-summary.model";
+import {ReservationSummary} from "../reservation/model/reservation-summary.model";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class PropertyService {
     return this.demoProperties;
   }
 
-  getProperty(id: number) {
+  getProperty(id: number) : PropertyDetails {
      //TODO make http call to get property with id and precise return type
     let fee1 : FeeSummary = new FeeSummary(1,new Date(),100,"Supplier 1");
     let fee2 : FeeSummary = new FeeSummary(2,new Date(),200,"Supplier 2");
@@ -32,6 +33,9 @@ export class PropertyService {
     let income3 : IncomeSummary = new IncomeSummary(1,new Date(),100,"Income 3");
     let incomeList: IncomeSummary[] = [income1, income2, income3];
 
+    let reservationSummary : ReservationSummary = new ReservationSummary(1,"house 1",new Date(),new Date(),100);
+    let reservationList: ReservationSummary[] = [reservationSummary];
+
     let demoFullProperty: PropertyDetails = new PropertyDetails(
       1,
       "123 main st",
@@ -40,8 +44,13 @@ export class PropertyService {
       "APARTMENT",
       100000,
       new BankLoanSummary(200000,27000,163000),
+      1250,
+      6500,
+      250,
+      1000,
       feeList,
-      incomeList)
+      incomeList,
+      reservationList)
     return demoFullProperty;
   }
 }

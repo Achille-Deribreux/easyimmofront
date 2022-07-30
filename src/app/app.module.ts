@@ -19,6 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
+import {MatListModule} from "@angular/material/list";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { IncomeTableComponent } from './income/components/income-table/income-table.component';
+import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
+import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,10 @@ import {HttpClientModule} from "@angular/common/http";
     FeeListComponent,
     ReservationComponent,
     ReservationListComponent,
-    HeaderComponent
+    HeaderComponent,
+    IncomeTableComponent,
+    FeeTableComponent,
+    ReservationTableComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,9 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserAnimationsModule,
     MatTableModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}

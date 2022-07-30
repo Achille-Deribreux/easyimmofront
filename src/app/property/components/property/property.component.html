@@ -1,1 +1,58 @@
-<p> property works! </p>
+<script src="../../../income/components/income-list/income-list.component.ts"></script>
+<link rel="stylesheet" href="property.component.scss">
+<ng-container>
+  <div class="detailsAndStatsContainer">
+    <div class="subdiv">
+      <h3>Property Details</h3>
+      <mat-list>
+        <mat-list-item><strong>Nom :</strong> {{property.name}}</mat-list-item>
+        <mat-list-item><strong>Address :</strong> {{property.address}}</mat-list-item>
+        <mat-list-item><strong>Rent Type :</strong> {{property.rentType}}</mat-list-item>
+        <mat-list-item><strong>Type :</strong> {{property.type}}</mat-list-item>
+        <mat-list-item><strong>Buy Price :</strong> {{property.buyPrice | currency : 'EUR'}}</mat-list-item>
+      </mat-list>
+
+      <div *ngIf="property.bankLoanSummary!=null">
+        <h4>Bank Loan : </h4>
+        <mat-progress-bar mode="determinate" [value]="getBankLoanPercentage()"> </mat-progress-bar>
+        <p><strong>Total amount :</strong> {{property.bankLoanSummary.totalAmount | currency : 'EUR'}}</p>
+        <p><strong>Due amount :</strong> {{property.bankLoanSummary.dueAmount | currency : 'EUR'}}</p>
+        <p><strong>Refunded amount :</strong> {{property.bankLoanSummary.refundedAmount | currency : 'EUR'}}</p>
+      </div>
+    </div>
+    <div class="subdiv">
+      <h3>Property Stats</h3>
+
+      <div>
+        <h4>Incomes : </h4>
+        <p><strong>Yearly incomes :</strong> {{property.yearlyIncomes | currency : 'EUR'}}</p>
+        <p><strong>Monthly incomes :</strong> {{property.monthlyIncomes | currency : 'EUR'}}</p>
+      </div>
+
+      <div>
+        <h4>Fees : </h4>
+        <p><strong>Yearly fees :</strong> {{property.yearlyFees | currency : 'EUR'}}</p>
+        <p><strong>Monthly fees :</strong> {{property.monthlyFees | currency : 'EUR'}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="listsContainer">
+    <div *ngIf=" property.incomes!=null && property.incomes.length>0">
+      <h3>Incomes : </h3>
+      <app-income-table [incomeList]="property.incomes" [displayedColumns]="displayedIncomeColumns"> </app-income-table>
+    </div>
+
+    <div *ngIf=" property.fees!=null && property.fees.length>0">
+      <h3>Fees : </h3>
+      <app-fee-table [feeList]="property.fees" [displayedColumns]="displayedFeesColumns"></app-fee-table>
+    </div>
+
+    <div *ngIf=" property.reservations!=null && property.reservations.length>0">
+      <h3>Reservations : </h3>
+      <app-reservation-table [reservationList]="property.reservations" [displayedColumns]="displayedReservationColumns"></app-reservation-table>
+    </div>
+  </div>
+</ng-container>
+
+
