@@ -25,6 +25,7 @@ import { IncomeTableComponent } from './income/components/income-table/income-ta
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
 import { IncomeCreationFormComponent } from './income/components/income-creation-form/income-creation-form.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -44,16 +45,17 @@ import { IncomeCreationFormComponent } from './income/components/income-creation
     ReservationTableComponent,
     IncomeCreationFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    HttpClientModule,
-    MatIconModule,
-    MatListModule,
-    MatProgressBarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        HttpClientModule,
+        MatIconModule,
+        MatListModule,
+        MatProgressBarModule,
+        FormsModule
+    ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],

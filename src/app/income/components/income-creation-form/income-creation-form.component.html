@@ -1,17 +1,17 @@
 <div class="container-sm w-50 mt-5">
   <h1>Nouveau revenu</h1>
-  <form>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group mb-3">
       <label for="date">Date</label>
-      <input type="date" id="date" class="form-control">
+      <input type="date" name="date" id="date" class="form-control" ngModel required>
     </div>
     <div class="form-group mb-3">
       <label for="amount">Montant</label>
-      <input type="text" id="amount" class="form-control">
+      <input type="text" name="montant" id="amount" class="form-control" ngModel required>
     </div>
     <div class="form-group mb-3">
       <label for="description">Description</label>
-      <input type="text" id="description" class="form-control">
+      <input type="text" name="description" id="description" class="form-control" ngModel required>
     </div>
     <button class="btn btn-dark">Ajouter</button>
   </form>
