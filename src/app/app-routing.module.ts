@@ -9,11 +9,13 @@ import {PropertyComponent} from "./property/components/property/property.compone
 import {IncomeComponent} from "./income/components/income/income.component";
 import {FeeComponent} from "./fee/components/fee/fee.component";
 import {ReservationComponent} from "./reservation/components/reservation/reservation.component";
+import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
   {path : 'reservation/:id', component : ReservationComponent},
   {path : 'properties', component : PropertyListComponent},
+  {path : 'property/add', component : AddPropertyComponent},
   {path : 'property/:id', component : PropertyComponent},
   {path : 'fees', component : FeeListComponent},
   {path : 'fee/:id', component : FeeComponent},

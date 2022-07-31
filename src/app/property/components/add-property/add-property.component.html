@@ -1,0 +1,31 @@
+<script src="../../../app-routing.module.ts"></script>
+<form [formGroup]="formValues">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input formControlName="address" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <input formControlName="type" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rent Type</mat-label>
+    <input formControlName="rentType" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Buy price</mat-label>
+    <input formControlName="buyPrice" type="number" matInput>
+  </mat-form-field>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+  </mat-card-actions>
+</form>
