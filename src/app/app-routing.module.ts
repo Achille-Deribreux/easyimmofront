@@ -9,6 +9,7 @@ import {PropertyComponent} from "./property/components/property/property.compone
 import {IncomeComponent} from "./income/components/income/income.component";
 import {FeeComponent} from "./fee/components/fee/fee.component";
 import {ReservationComponent} from "./reservation/components/reservation/reservation.component";
+import {IncomeCreationFormComponent} from "./income/components/income-creation-form/income-creation-form.component";
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path : 'property/:id', component : PropertyComponent},
   {path : 'fees', component : FeeListComponent},
   {path : 'fee/:id', component : FeeComponent},
+  {path : 'income/add', component : IncomeCreationFormComponent},
   {path : 'incomes', component : IncomeListComponent},
   {path : 'income/:id', component : IncomeComponent},
   {path : '', component : HomeComponent}

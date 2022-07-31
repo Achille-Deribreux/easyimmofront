@@ -24,6 +24,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
+import { IncomeCreationFormComponent } from './income/components/income-creation-form/income-creation-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ReservationTableComponent } from './reservation/components/reservation-
     HeaderComponent,
     IncomeTableComponent,
     FeeTableComponent,
-    ReservationTableComponent
+    ReservationTableComponent,
+    IncomeCreationFormComponent
   ],
   imports: [
     BrowserModule,
