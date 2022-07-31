@@ -1,6 +1,6 @@
 <script src="../../../income/components/income-list/income-list.component.ts"></script>
 <link rel="stylesheet" href="property.component.scss">
-<ng-container>
+<ng-container *ngIf="property != null">
   <div class="detailsAndStatsContainer">
     <div class="subdiv">
       <h3>Property Details</h3>
@@ -14,7 +14,7 @@
 
       <div *ngIf="property.bankLoanSummary!=null">
         <h4>Bank Loan : </h4>
-        <mat-progress-bar mode="determinate" [value]="getBankLoanPercentage()"> </mat-progress-bar>
+        <mat-progress-bar mode="determinate" [value]="getBankLoanPercentage(property.bankLoanSummary.refundedAmount,property.bankLoanSummary.totalAmount)"> </mat-progress-bar>
         <p><strong>Total amount :</strong> {{property.bankLoanSummary.totalAmount | currency : 'EUR'}}</p>
         <p><strong>Due amount :</strong> {{property.bankLoanSummary.dueAmount | currency : 'EUR'}}</p>
         <p><strong>Refunded amount :</strong> {{property.bankLoanSummary.refundedAmount | currency : 'EUR'}}</p>
