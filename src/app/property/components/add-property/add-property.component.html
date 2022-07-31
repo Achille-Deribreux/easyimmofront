@@ -1,4 +1,6 @@
+<script src="../property-list/property-list.component.ts"></script>
 <script src="../../../app-routing.module.ts"></script>
+<h4>Add a new property : </h4>
 <form [formGroup]="formValues">
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
@@ -12,12 +14,18 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Type</mat-label>
-    <input formControlName="type" matInput>
+    <mat-select formControlName="type">
+      <mat-option value="HOUSE">House</mat-option>
+      <mat-option value="APPARTMENT">Apartment</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Rent Type</mat-label>
-    <input formControlName="rentType" matInput>
+    <mat-select formControlName="rentType">
+      <mat-option value="SHORT">Short rent</mat-option>
+      <mat-option value="LONG">Long rent</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="fill">

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PropertyService} from "../../property.service";
 import {PropertyDetails} from "../../models/property-details.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-property',
@@ -15,10 +16,10 @@ export class PropertyComponent implements OnInit {
   displayedFeesColumns: string[] = ['date','supplier',"amount","button"];
   displayedReservationColumns: string[] = ['fromDate','toDate',"price","button"];
 
-  constructor(private propertyService: PropertyService) { }
+  constructor(private propertyService: PropertyService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.propertyService.getProperty(1).subscribe({
+    this.propertyService.getProperty(this.route.snapshot.params['id']).subscribe({
       next: (property: PropertyDetails) => {
         this.property = property;
       },
