@@ -1,7 +1,7 @@
 <script src="../property-list/property-list.component.ts"></script>
 <script src="../../../app-routing.module.ts"></script>
 <h4>Add a new property : </h4>
-<form [formGroup]="formValues">
+<form [formGroup]="formValues" (submit)="onSubmit()">
   <mat-form-field appearance="fill">
     <mat-label>Name</mat-label>
     <input formControlName="name" matInput>
@@ -34,6 +34,6 @@
   </mat-form-field>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
   </mat-card-actions>
 </form>
