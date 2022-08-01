@@ -24,6 +24,15 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
+import { AddFeeComponent } from './fee/components/add-fee/add-fee.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -40,7 +49,8 @@ import { ReservationTableComponent } from './reservation/components/reservation-
     HeaderComponent,
     IncomeTableComponent,
     FeeTableComponent,
-    ReservationTableComponent
+    ReservationTableComponent,
+    AddFeeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +60,19 @@ import { ReservationTableComponent } from './reservation/components/reservation-
     HttpClientModule,
     MatIconModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [
+    MatDatepickerModule,
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],
   bootstrap: [AppComponent]
