@@ -23,7 +23,8 @@ export class AddPropertyComponent {
   });
 
   onSubmit() {
-    let property = new PropertyBody(this.formValues.value.name,this.formValues.value.address,this.formValues.value.type,this.formValues.value.rentType,this.formValues.value.buyPrice);
+    let value = this.formValues.value;
+    let property = new PropertyBody(value.name,value.address,value.type, value.rentType,value.buyPrice);
     this.propertyService.addProperty(property).pipe(tap(()=>this.router.navigateByUrl("/properties"))).subscribe();
   }
 }
