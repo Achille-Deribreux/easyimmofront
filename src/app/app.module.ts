@@ -24,6 +24,13 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
+import { AddPropertyComponent } from './property/components/add-property/add-property.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -40,7 +47,8 @@ import { ReservationTableComponent } from './reservation/components/reservation-
     HeaderComponent,
     IncomeTableComponent,
     FeeTableComponent,
-    ReservationTableComponent
+    ReservationTableComponent,
+    AddPropertyComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,14 @@ import { ReservationTableComponent } from './reservation/components/reservation-
     HttpClientModule,
     MatIconModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}
