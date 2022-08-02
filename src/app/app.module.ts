@@ -33,6 +33,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatInputModule} from "@angular/material/input";
+import { AddReservationComponent } from './reservation/components/add-reservation/add-reservation.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatInputModule} from "@angular/material/input";
     IncomeTableComponent,
     FeeTableComponent,
     ReservationTableComponent,
-    AddFeeComponent
+    AddFeeComponent,
+    AddReservationComponent
   ],
   imports: [
     BrowserModule,

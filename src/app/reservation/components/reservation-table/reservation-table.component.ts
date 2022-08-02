@@ -19,4 +19,7 @@ export class ReservationTableComponent {
     this.router.navigateByUrl('/reservation/'+id);
   }
 
+  redirectAddNewReservation() {
+    this.router.navigateByUrl('/reservation/add');
+  }
 }
