@@ -4,6 +4,8 @@ import {FeeService} from "../../fee.service";
 import {Router} from "@angular/router";
 import {tap} from "rxjs";
 import {FeeBody} from "../../model/fee-body.model";
+import {PropertySummary} from "../../../property/models/property-summary.model";
+import {PropertyService} from "../../../property/property.service";
 
 @Component({
   selector: 'app-add-fee',
@@ -12,10 +14,22 @@ import {FeeBody} from "../../model/fee-body.model";
 })
 export class AddFeeComponent implements OnInit {
 
-  constructor(private formBuilder : FormBuilder, private feeService : FeeService, private router : Router) { }
+  constructor(private formBuilder : FormBuilder,
+              private feeService : FeeService,
+              private router : Router,
+              private propertyService : PropertyService) { }
 
   ngOnInit(): void {
+    this.propertyService.getAllProperties().subscribe({
+        next: (properties: PropertySummary[]) => {
+          this.properties = properties;
+        }
+      }
+    );
   }
+
+  properties!: PropertySummary[];
+
   formValues = this.formBuilder.group({
     supplier: [''],
     amount: [''],

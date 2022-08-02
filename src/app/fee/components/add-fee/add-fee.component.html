@@ -11,8 +11,10 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Property Id</mat-label>
-    <input formControlName="propertyId" type="number" matInput>
+    <mat-label>Property</mat-label>
+    <mat-select formControlName="propertyId">
+      <mat-option *ngFor="let property of properties" value="{{property.id}}">{{property.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
