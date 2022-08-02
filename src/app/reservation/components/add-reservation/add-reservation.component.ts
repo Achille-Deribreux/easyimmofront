@@ -39,7 +39,8 @@ export class AddReservationComponent implements OnInit {
   });
 
   onSubmit() {
-    let reservation : ReservationBody = new ReservationBody(this.formValues.value.amount,this.formValues.value.reservationDate, this.formValues.value.fromDate, this.formValues.value.toDate,  this.formValues.value.propertyId);
+    let value = this.formValues.value;
+    let reservation : ReservationBody = new ReservationBody(value.amount,value.reservationDate, value.fromDate, value.toDate,value.propertyId);
     this.reservationService.addReservation(reservation).pipe(tap(() => this.router.navigateByUrl('/reservations')))
       .pipe(tap(()=>this.router.navigateByUrl("/reservations"))).subscribe();
   }
