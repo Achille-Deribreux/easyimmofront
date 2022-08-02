@@ -24,8 +24,17 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
-import { IncomeCreationFormComponent } from './income/components/income-creation-form/income-creation-form.component';
-import {FormsModule} from "@angular/forms";
+import { AddIncomeComponent } from './income/components/add-income/add-income.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -43,7 +52,7 @@ import {FormsModule} from "@angular/forms";
     IncomeTableComponent,
     FeeTableComponent,
     ReservationTableComponent,
-    IncomeCreationFormComponent
+    AddIncomeComponent
   ],
     imports: [
         BrowserModule,
@@ -54,7 +63,17 @@ import {FormsModule} from "@angular/forms";
         MatIconModule,
         MatListModule,
         MatProgressBarModule,
-        FormsModule
+        FormsModule,
+        CommonModule,
+        MatSortModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatButtonModule,
+        ReactiveFormsModule,
     ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}

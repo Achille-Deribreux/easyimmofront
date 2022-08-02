@@ -1,0 +1,33 @@
+<div class="form-container">
+  <form [formGroup]="formValues" (ngSubmit)="onSubmit()">
+      <h1>Nouveau revenu</h1>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Date</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="myDatePicker" placeholder="01/08/2022">
+          <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker></mat-datepicker>
+          <mat-hint>Sélectionnez la date d'entrée</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Montant</mat-label>
+          <input formControlName="amount" matInput placeholder="125">
+          <mat-hint>Entrez le montant du revenu</mat-hint>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input formControlName="description" matInput placeholder="Votre description">
+        </mat-form-field>
+      </p>
+
+      <button class="btn btn-dark">Ajouter</button>
+  </form>
+</div>
+
+
