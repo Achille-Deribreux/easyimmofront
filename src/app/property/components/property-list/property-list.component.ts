@@ -24,4 +24,8 @@ export class PropertyListComponent implements OnInit {
     this.router.navigateByUrl('/property/'+id);
   }
 
+  redirectAddNewProperty() {
+    this.router.navigateByUrl('/property/add');
+  }
+
 }

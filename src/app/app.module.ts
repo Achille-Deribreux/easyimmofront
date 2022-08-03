@@ -24,16 +24,6 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
-import { AddFeeComponent } from './fee/components/add-fee/add-fee.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {ReactiveFormsModule} from "@angular/forms";
-import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
-import {MatSelectModule} from "@angular/material/select";
-import {MatCardModule} from "@angular/material/card";
-import {MatButtonModule} from "@angular/material/button";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatInputModule} from "@angular/material/input";
-import { AddReservationComponent } from './reservation/components/add-reservation/add-reservation.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +43,8 @@ import { AddReservationComponent } from './reservation/components/add-reservatio
     ReservationTableComponent,
     AddFeeComponent,
     AddReservationComponent
+    ReservationTableComponent,
+    AddPropertyComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +64,14 @@ import { AddReservationComponent } from './reservation/components/add-reservatio
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule
+    MatProgressBarModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [
     MatDatepickerModule,
