@@ -15,11 +15,11 @@ export class ReservationService {
  constructor(private http:HttpClient) {
  }
   getAllReservations() : Observable<ReservationSummary[]> {
-    return this.http.get<ReservationSummary[]>(this.backDevHost+"reservation/getAll");
+    return this.http.get<ReservationSummary[]>(this.backBaseHost+"reservation/getAll");
   }
 
   addReservation(reservation : ReservationBody) : Observable<ReservationBody> {
-    return this.http.post<ReservationBody>(this.backDevHost+"reservation/add", reservation);
+    return this.http.post<ReservationBody>(this.backBaseHost+"reservation/add", reservation);
   }
 
 

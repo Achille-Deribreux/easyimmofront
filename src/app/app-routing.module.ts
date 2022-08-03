@@ -15,10 +15,13 @@ import {AddReservationComponent} from "./reservation/components/add-reservation/
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
+  {path : 'reservation/add', component : AddReservationComponent},
   {path : 'reservation/:id', component : ReservationComponent},
   {path : 'properties', component : PropertyListComponent},
+  {path : 'property/add', component : AddPropertyComponent},
   {path : 'property/:id', component : PropertyComponent},
   {path : 'fees', component : FeeListComponent},
+  {path : 'fee/add', component : AddFeeComponent},
   {path : 'fee/:id', component : FeeComponent},
   {path : 'incomes', component : IncomeListComponent},
   {path : 'income/:id', component : IncomeComponent},
