@@ -15,7 +15,11 @@ export class ReservationListComponent implements OnInit {
   displayedColumns: string[] = ['propertyName', 'fromDate','toDate','price',"button"];
 
   ngOnInit(): void {
-    this.reservations = this.reservationService.getAllReservations();
+     this.reservationService.getAllReservations().subscribe({
+        next: (reservations: ReservationSummary[]) => {
+          this.reservations = reservations;
+        }
+     });
   }
 
 }
