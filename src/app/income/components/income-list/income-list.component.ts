@@ -15,7 +15,11 @@ export class IncomeListComponent implements OnInit {
   displayedColumns: string[] = ['date', 'amount', 'description',"button"];
 
   ngOnInit(): void {
-    this.incomes = this.incomeService.getAllIncomes();
+     this.incomeService.getAllIncomes().subscribe({
+       next: (income: IncomeSummary[]) => {
+         this.incomes = income;
+       }
+     });
   }
 
 }

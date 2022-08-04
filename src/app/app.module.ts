@@ -24,19 +24,22 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
 import { FeeTableComponent } from './fee/components/fee-table/fee-table.component';
 import { ReservationTableComponent } from './reservation/components/reservation-table/reservation-table.component';
+import { AddIncomeComponent } from './income/components/add-income/add-income.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from '@angular/common';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSortModule} from '@angular/material/sort';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from "@angular/material/card";
 import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
-import {MatInputModule} from "@angular/material/input";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
-import {MatSelectModule} from "@angular/material/select";
-import {MatCardModule} from "@angular/material/card";
-import {MatButtonModule} from "@angular/material/button";
-import {MatDatepickerModule} from "@angular/material/datepicker";
 
-// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,30 +56,33 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
     IncomeTableComponent,
     FeeTableComponent,
     ReservationTableComponent,
+    AddIncomeComponent,
     AddFeeComponent,
     AddReservationComponent,
     AddPropertyComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    HttpClientModule,
-    MatIconModule,
-    MatListModule,
-    MatProgressBarModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatCardModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatInputModule,
-    FormsModule,
-    MatFormFieldModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        HttpClientModule,
+        MatIconModule,
+        MatListModule,
+        MatProgressBarModule,
+        FormsModule,
+        CommonModule,
+        MatSortModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatCardModule
+    ],
   providers: [
     MatDatepickerModule,
     { provide: LOCALE_ID, useValue: 'fr-FR'}
