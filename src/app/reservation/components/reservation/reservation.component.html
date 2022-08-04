@@ -1,1 +1,30 @@
-<p>reservation works!</p>
+<ng-container *ngIf="reservation!=null">
+  <div class="detailsContainer">
+    <div class="reservationDetailsContainer">
+      <h3>Reservation Details</h3>
+      <div class="subdiv">
+        <p><strong>Reservation date : </strong>{{reservation.reservationDate | date}}</p>
+        <p><strong>From date : </strong>{{reservation.fromDate | date}}</p>
+        <p><strong>To date : </strong>{{reservation.toDate | date}}</p>
+        <!--
+        CREATES A BUG BECAUSE OF CORRUP DATA, REMOVE COMMENT WHEN DB IS RESET
+        <p><strong>Reservation Price : </strong>{{reservation.income.amount | currency : 'EUR'}}</p>-->
+      </div>
+    </div>
+
+    <div class="propertyDetailsContainer">
+      <h3>Property Details</h3>
+      <div class="subdiv">
+        <p><strong>Property name : </strong>{{reservation.property.name}}</p>
+        <p><strong>Property address : </strong>{{reservation.property.address}}</p>
+        <p><strong>Property type : </strong>{{reservation.property.type}}</p>
+        <button mat-raised-button color="primary" (click)="redirectToProperty()">See property</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="reservation.feeList!=null" class="feeTableContainer">
+    <h3>Fees :</h3>
+    <app-fee-table [feeList]="reservation.feeList"  [displayedColumns]="displayedFeesColumns"></app-fee-table>
+  </div>
+</ng-container>
