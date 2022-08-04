@@ -35,6 +35,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatRadioModule,
         MatButtonModule,
         ReactiveFormsModule,
+        MatCardModule
     ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}

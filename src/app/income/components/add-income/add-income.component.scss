@@ -1,15 +1,18 @@
 form{
-  width: fit-content;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   flex-direction: column;
-}
-.form-container{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  flex-direction: column;
-  margin-top: 5rem;
+  margin : 2rem auto;
+  width: 70%;
+  border: 1px solid black;
+  padding: 2rem;
+  mat-form-field{
+    width: 100%;
+  }
+}
+h4{
+  margin: 2rem 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
 }

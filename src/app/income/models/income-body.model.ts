@@ -3,8 +3,8 @@ export class IncomeBody {
     public amount: number,
     public date : Date,
     public description : string,
-    public id? : number,
-    public propertyId? : number
+    public propertyId : number,
+    public id? : number
   ) {
 
   }

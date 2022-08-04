@@ -18,4 +18,8 @@ export class IncomeTableComponent {
     this.router.navigateByUrl('/income/'+id);
   }
 
+  redirectAddNewIncome() {
+    this.router.navigateByUrl('/income/add');
+  }
+
 }

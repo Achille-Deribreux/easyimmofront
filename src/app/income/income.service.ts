@@ -12,8 +12,10 @@ export class IncomeService {
 
   constructor(private router : Router, private http: HttpClient) { }
 
+  backBaseHost = "https://easy-immo-back.herokuapp.com/";
+
   getAllIncomes(): Observable<IncomeSummary[]> {
-    return this.http.get<IncomeSummary[]>('https://easy-immo-back.herokuapp.com/income/getAll');
+    return this.http.get<IncomeSummary[]>(this.backBaseHost+'income/getAll');
   }
 
   showIncome(id:number) {
@@ -21,6 +23,6 @@ export class IncomeService {
   }
 
   addIncome(income: IncomeBody) {
-    this.http.post('https://easy-immo-back.herokuapp.com/income/add', income).subscribe();
+    this.http.post(this.backBaseHost+'income/add', income).subscribe();
   }
 }
