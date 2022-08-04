@@ -16,7 +16,7 @@
   </ng-container>
 
   <ng-container matColumnDef="button">
-    <th mat-header-cell *matHeaderCellDef> See :  </th>
+    <th mat-header-cell *matHeaderCellDef> <button mat-raised-button color="primary" (click)="redirectAddNewFee()">Add new</button> </th>
     <td mat-cell *matCellDef="let element">
       <mat-icon (click)="showFee(element.id)">visibility</mat-icon>
     </td>

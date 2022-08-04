@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ReservationDetail} from "../../model/reservation-detail.model";
+import {ReservationService} from "../../reservation.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-reservation',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() { }
+  reservation! : ReservationDetail;
+  displayedFeesColumns: string[] = ['date','supplier',"amount","button"];
+
+  constructor(private reservationService:ReservationService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
+    this.reservationService.getReservation(this.route.snapshot.params['id']).subscribe({
+      next: (reservation: ReservationDetail) => {
+        this.reservation = reservation;
+      },
+      error: (err) => {console.log(err);}
+    });
+  }
+
+  redirectToProperty():void {
+    this.router.navigateByUrl("property/"+this.reservation.property.id);
   }
 
 }

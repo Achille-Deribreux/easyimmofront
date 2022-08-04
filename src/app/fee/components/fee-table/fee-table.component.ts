@@ -18,4 +18,8 @@ export class FeeTableComponent {
     this.router.navigateByUrl('/fee/'+id);
   }
 
+  redirectAddNewFee() {
+    this.router.navigateByUrl('/fee/add');
+  }
+
 }

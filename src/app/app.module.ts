@@ -36,6 +36,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule} from "@angular/material/card";
+import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
+import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
+import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
+import {MatInputModule} from "@angular/material/input";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatNativeDateModule, MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -54,6 +65,10 @@ import { MatCardModule} from "@angular/material/card";
     FeeTableComponent,
     ReservationTableComponent,
     AddIncomeComponent
+    ReservationTableComponent,
+    AddFeeComponent,
+    AddReservationComponent,
+    AddPropertyComponent
   ],
     imports: [
         BrowserModule,
@@ -78,6 +93,7 @@ import { MatCardModule} from "@angular/material/card";
         MatCardModule
     ],
   providers: [
+    MatDatepickerModule,
     { provide: LOCALE_ID, useValue: 'fr-FR'}
   ],
   bootstrap: [AppComponent]
