@@ -3,6 +3,7 @@ import {ReservationSummary} from "./model/reservation-summary.model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ReservationBody} from "./model/reservation-body.model";
+import {ReservationDetail} from "./model/reservation-detail.model";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,10 @@ export class ReservationService {
  }
   getAllReservations() : Observable<ReservationSummary[]> {
     return this.http.get<ReservationSummary[]>(this.backBaseHost+"reservation/getAll");
+  }
+
+  getReservation(id: number) : Observable<ReservationDetail> {
+    return this.http.get<ReservationDetail>(this.backBaseHost+"reservation/getById?id="+id);
   }
 
   addReservation(reservation : ReservationBody) : Observable<ReservationBody> {
