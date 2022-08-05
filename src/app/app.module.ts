@@ -40,6 +40,7 @@ import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
 import { EditPropertyComponent } from './property/components/edit-property/edit-property.component';
+import { PropertyFormComponent } from './property/components/property-form/property-form.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { EditPropertyComponent } from './property/components/edit-property/edit-
     AddFeeComponent,
     AddReservationComponent,
     AddPropertyComponent,
-    EditPropertyComponent
+    EditPropertyComponent,
+    PropertyFormComponent
   ],
     imports: [
         BrowserModule,

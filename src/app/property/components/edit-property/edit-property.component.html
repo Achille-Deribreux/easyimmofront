@@ -1,37 +1,3 @@
 <h4>Edit property : </h4>
-<form [formGroup]="formValues" (submit)="onSubmit()">
-  <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
-    <input formControlName="name" matInput>
-  </mat-form-field>
+<app-property-form [submitCase]="submitCase"></app-property-form>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Address</mat-label>
-    <input formControlName="address" matInput>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Type</mat-label>
-    <mat-select formControlName="type">
-      <mat-option value="HOUSE">House</mat-option>
-      <mat-option value="APPARTMENT">Apartment</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Rent Type</mat-label>
-    <mat-select formControlName="rentType">
-      <mat-option value="SHORT">Short rent</mat-option>
-      <mat-option value="LONG">Long rent</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Buy price</mat-label>
-    <input formControlName="buyPrice" type="number" matInput>
-  </mat-form-field>
-
-  <mat-card-actions>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
-  </mat-card-actions>
-</form>
