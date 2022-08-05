@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {PropertySummary} from "./models/property-summary.model";
 import {PropertyDetails} from "./models/property-details.model";
 import {Observable} from "rxjs";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {PropertyBody} from "./models/property-body.model";
 
 @Injectable({
@@ -26,5 +26,11 @@ export class PropertyService {
 
   addProperty(property: PropertyBody) : Observable<PropertyBody> {
     return this.http.post<PropertyBody>(this.backBaseHost+"property/add",property);
+  }
+
+  editProperty(property: PropertyBody, id : number) : Observable<PropertyBody> {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.put<PropertyBody>(this.backBaseHost+"property/update",property, {params});
   }
 }

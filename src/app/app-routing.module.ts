@@ -13,6 +13,7 @@ import {AddIncomeComponent} from "./income/components/add-income/add-income.comp
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
 import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
+import {EditPropertyComponent} from "./property/components/edit-property/edit-property.component";
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path : 'reservation/:id', component : ReservationComponent},
   {path : 'properties', component : PropertyListComponent},
   {path : 'property/add', component : AddPropertyComponent},
+  {path : 'property/update/:id', component : EditPropertyComponent},
   {path : 'property/:id', component : PropertyComponent},
   {path : 'fees', component : FeeListComponent},
   {path : 'fee/add', component : AddFeeComponent},

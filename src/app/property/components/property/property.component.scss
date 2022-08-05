@@ -55,3 +55,14 @@ h3{
   font-weight: bold;
   font-size: xx-large;
 }
+
+.buttons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 0 0;
+
+  button{
+    margin: 0 1rem;
+  }
+}

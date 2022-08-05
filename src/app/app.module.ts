@@ -39,6 +39,7 @@ import {MatCardModule} from "@angular/material/card";
 import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
+import { EditPropertyComponent } from './property/components/edit-property/edit-property.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {AddPropertyComponent} from "./property/components/add-property/add-prope
     AddIncomeComponent,
     AddFeeComponent,
     AddReservationComponent,
-    AddPropertyComponent
+    AddPropertyComponent,
+    EditPropertyComponent
   ],
     imports: [
         BrowserModule,
