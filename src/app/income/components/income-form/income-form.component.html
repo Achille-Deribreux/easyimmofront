@@ -1,0 +1,31 @@
+<form [formGroup]="formValues" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input formControlName="date" matInput [matDatepicker]="myDatePicker" placeholder="01/08/2022">
+    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker></mat-datepicker>
+    <mat-hint>Select entry date</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Amount</mat-label>
+    <input formControlName="amount" matInput placeholder="125">
+    <mat-hint>Enter the income amount</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <input formControlName="description" matInput placeholder="Your description">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Property</mat-label>
+    <mat-select formControlName="propertyId">
+      <mat-option *ngFor="let property of properties" value="{{property.id}}">{{property.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+</form>

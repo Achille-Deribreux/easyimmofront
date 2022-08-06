@@ -19,12 +19,14 @@ export class IncomeService {
     return this.http.get<IncomeSummary[]>(this.backBaseHost+'income/getAll');
   }
 
-  showIncome(id:number) {
-    this.router.navigateByUrl('/income/'+id);
+  getIncome(id:number) : Observable<IncomeBody> {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.get<IncomeBody>(this.backBaseHost+"income/getById", {params});
   }
 
-  addIncome(income: IncomeBody) {
-    this.http.post(this.backBaseHost+'income/add', income).subscribe();
+  addIncome(income: IncomeBody)  : Observable<IncomeBody> {
+    return this.http.post<IncomeBody>(this.backBaseHost+'income/add', income);
   }
 
   editIncome(income: IncomeBody, id : number) : Observable<IncomeBody> {
