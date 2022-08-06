@@ -44,6 +44,7 @@ import { PropertyFormComponent } from './property/components/property-form/prope
 import { ReservationFormComponent } from './reservation/components/reservation-form/reservation-form.component';
 import { IncomeFormComponent } from './income/components/income-form/income-form.component';
 import { FeeFormComponent } from './fee/components/fee-form/fee-form.component';
+import { EditFeeComponent } from './fee/components/edit-fee/edit-fee.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { FeeFormComponent } from './fee/components/fee-form/fee-form.component';
     PropertyFormComponent,
     ReservationFormComponent,
     IncomeFormComponent,
-    FeeFormComponent
+    FeeFormComponent,
+    EditFeeComponent
   ],
     imports: [
         BrowserModule,
