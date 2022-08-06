@@ -19,6 +19,12 @@ export class FeeService {
     return this.http.get<FeeSummary[]>("https://easy-immo-back.herokuapp.com/fee/getAll");
   }
 
+  getFee(id:number) : Observable<FeeBody> {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.get<FeeBody>(this.backBaseHost+"fee/getById", {params});
+  }
+
   addFee(fee : FeeBody) : Observable<FeeBody> {
     return this.http.post<FeeBody>(this.backBaseHost+"fee/add", fee);
   }

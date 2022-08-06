@@ -43,6 +43,7 @@ import { EditPropertyComponent } from './property/components/edit-property/edit-
 import { PropertyFormComponent } from './property/components/property-form/property-form.component';
 import { ReservationFormComponent } from './reservation/components/reservation-form/reservation-form.component';
 import { IncomeFormComponent } from './income/components/income-form/income-form.component';
+import { FeeFormComponent } from './fee/components/fee-form/fee-form.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { IncomeFormComponent } from './income/components/income-form/income-form
     EditPropertyComponent,
     PropertyFormComponent,
     ReservationFormComponent,
-    IncomeFormComponent
+    IncomeFormComponent,
+    FeeFormComponent
   ],
     imports: [
         BrowserModule,
