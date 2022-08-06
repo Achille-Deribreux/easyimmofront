@@ -1,1 +1,38 @@
-<p>reservation-form works!</p>
+<form [formGroup]="formValues" (submit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Property</mat-label>
+    <mat-select formControlName="propertyId">
+      <mat-option *ngFor="let property of properties" value="{{property.id}}">{{property.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Amount</mat-label>
+    <input formControlName="amount" type="number" matInput>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Reservation Date</mat-label>
+    <mat-datepicker #myDatePicker1></mat-datepicker>
+    <input formControlName="reservationDate" [matDatepicker]="myDatePicker1" matInput>
+    <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>From Date</mat-label>
+    <mat-datepicker #myDatePicker2></mat-datepicker>
+    <input formControlName="fromDate" [matDatepicker]="myDatePicker2" matInput>
+    <mat-datepicker-toggle [for]="myDatePicker2" matSuffix></mat-datepicker-toggle>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>To Date</mat-label>
+    <mat-datepicker #myDatePicker3></mat-datepicker>
+    <input formControlName="toDate" [matDatepicker]="myDatePicker3" matInput>
+    <mat-datepicker-toggle [for]="myDatePicker3" matSuffix></mat-datepicker-toggle>
+  </mat-form-field>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+</form>
