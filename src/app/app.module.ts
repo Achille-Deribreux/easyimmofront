@@ -41,6 +41,7 @@ import {AddReservationComponent} from "./reservation/components/add-reservation/
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
 import { EditPropertyComponent } from './property/components/edit-property/edit-property.component';
 import { PropertyFormComponent } from './property/components/property-form/property-form.component';
+import { ReservationFormComponent } from './reservation/components/reservation-form/reservation-form.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { PropertyFormComponent } from './property/components/property-form/prope
     AddReservationComponent,
     AddPropertyComponent,
     EditPropertyComponent,
-    PropertyFormComponent
+    PropertyFormComponent,
+    ReservationFormComponent
   ],
     imports: [
         BrowserModule,
