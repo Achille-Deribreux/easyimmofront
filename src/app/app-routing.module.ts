@@ -15,6 +15,7 @@ import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
 import {EditPropertyComponent} from "./property/components/edit-property/edit-property.component";
 import {EditFeeComponent} from "./fee/components/edit-fee/edit-fee.component";
+import {EditIncomeComponent} from "./income/components/edit-income/edit-income.component";
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path : 'fee/update/:id', component : EditFeeComponent},
   {path : 'fee/:id', component : FeeComponent},
   {path : 'income/add', component : AddIncomeComponent},
+  {path : 'income/update/:id', component : EditIncomeComponent},
   {path : 'incomes', component : IncomeListComponent},
   {path : 'income/:id', component : IncomeComponent},
   {path : '', component : HomeComponent}
