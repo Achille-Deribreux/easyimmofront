@@ -63,8 +63,7 @@ export class ReservationFormComponent implements OnInit {
         .pipe(tap(() => this.router.navigateByUrl("/reservations"))).subscribe();
     }
     else {
-      this.reservationService.editReservation(reservation,this.id).pipe(tap(() => this.router.navigateByUrl('/reservations')))
-        .pipe(tap(() => this.router.navigateByUrl("/reservations"))).subscribe();
+      this.reservationService.editReservation(reservation,this.id).pipe(tap(() => this.router.navigateByUrl('/reservations'))).subscribe();
     }
   }
 

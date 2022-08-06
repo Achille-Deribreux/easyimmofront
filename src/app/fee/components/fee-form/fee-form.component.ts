@@ -58,7 +58,8 @@ export class FeeFormComponent implements OnInit {
     let fee : FeeBody = new FeeBody(value.amount, value.date, value.description, value.supplier,value.propertyId);
     if(this.submitCase === 'add') {
       this.feeService.addFee(fee).pipe(tap(() => this.router.navigateByUrl('/fees'))).subscribe();
-    }else {
+    }
+    else {
       this.feeService.editFee(fee, this.id).pipe(tap(() => this.router.navigateByUrl('/fees'))).subscribe();
     }
   }

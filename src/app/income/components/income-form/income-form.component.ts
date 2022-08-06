@@ -55,7 +55,8 @@ export class IncomeFormComponent implements OnInit {
     const newIncome = new IncomeBody(value.amount, value.date, value.description, value.propertyId);
     if(this.submitCase === 'add') {
       this.incomeService.addIncome(newIncome).pipe(tap(() => this.router.navigateByUrl("/incomes"))).subscribe();
-    }else {
+    }
+    else {
       this.incomeService.editIncome(newIncome, this.id).pipe(tap(() => this.router.navigateByUrl("/incomes"))).subscribe();
     }
   }
