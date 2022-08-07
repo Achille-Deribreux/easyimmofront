@@ -12,19 +12,5 @@ import {tap} from "rxjs";
 })
 export class AddPropertyComponent {
 
-  constructor(private formBuilder:FormBuilder,private propertyService: PropertyService,private router : Router) { }
-
-  formValues = this.formBuilder.group({
-    name: [''],
-    address: [''],
-    type: [''],
-    rentType: [''],
-    buyPrice: ['']
-  });
-
-  onSubmit() {
-    let value = this.formValues.value;
-    let property = new PropertyBody(value.name,value.address,value.type, value.rentType,value.buyPrice);
-    this.propertyService.addProperty(property).pipe(tap(()=>this.router.navigateByUrl("/properties"))).subscribe();
-  }
+  submitCase : string = "add";
 }

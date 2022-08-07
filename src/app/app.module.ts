@@ -39,6 +39,14 @@ import {MatCardModule} from "@angular/material/card";
 import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
+import { EditPropertyComponent } from './property/components/edit-property/edit-property.component';
+import { PropertyFormComponent } from './property/components/property-form/property-form.component';
+import { ReservationFormComponent } from './reservation/components/reservation-form/reservation-form.component';
+import { IncomeFormComponent } from './income/components/income-form/income-form.component';
+import { FeeFormComponent } from './fee/components/fee-form/fee-form.component';
+import { EditFeeComponent } from './fee/components/edit-fee/edit-fee.component';
+import { EditIncomeComponent } from './income/components/edit-income/edit-income.component';
+import { EditReservationComponent } from './reservation/components/edit-reservation/edit-reservation.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +67,15 @@ import {AddPropertyComponent} from "./property/components/add-property/add-prope
     AddIncomeComponent,
     AddFeeComponent,
     AddReservationComponent,
-    AddPropertyComponent
+    AddPropertyComponent,
+    EditPropertyComponent,
+    PropertyFormComponent,
+    ReservationFormComponent,
+    IncomeFormComponent,
+    FeeFormComponent,
+    EditFeeComponent,
+    EditIncomeComponent,
+    EditReservationComponent
   ],
     imports: [
         BrowserModule,

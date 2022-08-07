@@ -1,47 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
-import {Router} from "@angular/router";
-import {PropertyService} from "../../../property/property.service";
-import {ReservationService} from "../../reservation.service";
-import {PropertySummary} from "../../../property/models/property-summary.model";
-import {ReservationBody} from "../../model/reservation-body.model";
-import {tap} from "rxjs";
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-add-reservation',
   templateUrl: './add-reservation.component.html',
   styleUrls: ['./add-reservation.component.scss']
 })
-export class AddReservationComponent implements OnInit {
-
-  constructor(private formBuilder : FormBuilder,
-              private reservationService : ReservationService,
-              private router : Router,
-              private propertyService : PropertyService) { }
-
-  ngOnInit(): void {
-    this.propertyService.getAllProperties().subscribe({
-        next: (properties: PropertySummary[]) => {
-          this.properties = properties;
-        }
-      }
-    );
-  }
-
-  properties!: PropertySummary[];
-
-  formValues = this.formBuilder.group({
-    amount: [''],
-    fromDate: [''],
-    toDate: [''],
-    reservationDate: [''],
-    propertyId: ['']
-  });
-
-  onSubmit() {
-    let value = this.formValues.value;
-    let reservation : ReservationBody = new ReservationBody(value.amount,value.reservationDate, value.fromDate, value.toDate,value.propertyId);
-    this.reservationService.addReservation(reservation).pipe(tap(() => this.router.navigateByUrl('/reservations')))
-      .pipe(tap(()=>this.router.navigateByUrl("/reservations"))).subscribe();
-  }
+export class AddReservationComponent {
+  submitCase : string = "add";
 }

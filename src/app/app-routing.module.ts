@@ -13,18 +13,26 @@ import {AddIncomeComponent} from "./income/components/add-income/add-income.comp
 import {AddPropertyComponent} from "./property/components/add-property/add-property.component";
 import {AddFeeComponent} from "./fee/components/add-fee/add-fee.component";
 import {AddReservationComponent} from "./reservation/components/add-reservation/add-reservation.component";
+import {EditPropertyComponent} from "./property/components/edit-property/edit-property.component";
+import {EditFeeComponent} from "./fee/components/edit-fee/edit-fee.component";
+import {EditIncomeComponent} from "./income/components/edit-income/edit-income.component";
+import {EditReservationComponent} from "./reservation/components/edit-reservation/edit-reservation.component";
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
   {path : 'reservation/add', component : AddReservationComponent},
+  {path : 'reservation/update/:id', component : EditReservationComponent},
   {path : 'reservation/:id', component : ReservationComponent},
   {path : 'properties', component : PropertyListComponent},
   {path : 'property/add', component : AddPropertyComponent},
+  {path : 'property/update/:id', component : EditPropertyComponent},
   {path : 'property/:id', component : PropertyComponent},
   {path : 'fees', component : FeeListComponent},
   {path : 'fee/add', component : AddFeeComponent},
+  {path : 'fee/update/:id', component : EditFeeComponent},
   {path : 'fee/:id', component : FeeComponent},
   {path : 'income/add', component : AddIncomeComponent},
+  {path : 'income/update/:id', component : EditIncomeComponent},
   {path : 'incomes', component : IncomeListComponent},
   {path : 'income/:id', component : IncomeComponent},
   {path : '', component : HomeComponent}

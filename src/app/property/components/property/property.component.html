@@ -1,4 +1,14 @@
 <ng-container *ngIf="property != null">
+  <div class="buttons-container">
+    <a routerLink="/property/update/{{property.id}}">
+    <button mat-fab color="primary">
+      <mat-icon>edit</mat-icon>
+    </button>
+    </a>
+    <button mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
   <div class="detailsAndStatsContainer">
     <div class="subdiv">
       <h3>Property Details</h3>

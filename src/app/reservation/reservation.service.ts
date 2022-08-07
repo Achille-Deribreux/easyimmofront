@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ReservationSummary} from "./model/reservation-summary.model";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ReservationBody} from "./model/reservation-body.model";
 import {ReservationDetail} from "./model/reservation-detail.model";
@@ -25,6 +25,12 @@ export class ReservationService {
 
   addReservation(reservation : ReservationBody) : Observable<ReservationBody> {
     return this.http.post<ReservationBody>(this.backBaseHost+"reservation/add", reservation);
+  }
+
+  editReservation(reservation: ReservationBody, id : number) : Observable<ReservationBody> {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.put<ReservationBody>(this.backBaseHost+"reservation/update",reservation, {params});
   }
 
 

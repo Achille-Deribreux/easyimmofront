@@ -1,4 +1,14 @@
 <ng-container *ngIf="reservation!=null">
+  <div class="buttons-container">
+    <a routerLink="/reservation/update/{{reservation.id}}">
+      <button mat-fab color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </a>
+    <button mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
   <div class="detailsContainer">
     <div class="reservationDetailsContainer">
       <h3>Reservation Details</h3>
