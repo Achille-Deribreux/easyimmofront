@@ -39,9 +39,9 @@ export class FeeFormComponent implements OnInit {
         this.formValues = this.formBuilder.group({
           supplier: [fee.supplier],
           amount: [fee.amount],
-          date: [fee.date],
+          date: [new Date(fee.date)],
           description: [fee.description],
-          propertyId: [fee.propertyId]
+          propertyId: [fee.property.id]
         });
       });
     }

@@ -37,7 +37,7 @@ export class IncomeFormComponent implements OnInit {
       this.incomeService.getIncome(this.id).subscribe(income => {
         this.formValues = this.formBuilder.group({
           amount:new FormControl(income.amount),
-          date:new FormControl(income.date),
+          date:new FormControl(new Date(income.date)),
           description:new FormControl(income.description),
           propertyId:new FormControl(income.propertyId),
         })
