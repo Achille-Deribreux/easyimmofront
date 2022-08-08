@@ -1,1 +1,33 @@
-<p>fee works!</p>
+<ng-container *ngIf="fee!=null">
+  <div class="buttons-container">
+    <a routerLink="/fee/update/{{feeId}}">
+      <button mat-fab color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </a>
+    <button mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <div class="detailsContainer">
+    <div class="feeDetailsContainer">
+      <h3>Fee Details</h3>
+      <div class="subdiv">
+        <p><strong>Amount : </strong>{{ fee.amount | currency:'EUR':true }}</p>
+        <p><strong>Date : </strong>{{ fee.date | date }}</p>
+        <p><strong>Description : </strong>{{ fee.description }}</p>
+      </div>
+    </div>
+
+    <div class="propertyDetailsContainer">
+      <h3>Property Details</h3>
+      <div class="subdiv">
+        <p><strong>Property name : </strong>{{fee.property.name}}</p>
+        <p><strong>Property address : </strong>{{fee.property.address}}</p>
+        <p><strong>Property type : </strong>{{fee.property.type}}</p>
+        <button mat-raised-button color="primary" (click)="redirectToProperty()">See property</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
