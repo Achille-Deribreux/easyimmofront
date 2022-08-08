@@ -12,10 +12,10 @@ export class IncomeComponent implements OnInit {
 
   income!: IncomeBody;
 
-  constructor(private IncomeService: IncomeService, private route:ActivatedRoute) { }
+  constructor(private incomeService: IncomeService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.IncomeService.getIncome(this.route.snapshot.params['id']).subscribe({
+    this.incomeService.getIncome(this.route.snapshot.params['id']).subscribe({
       next: (income: IncomeBody) => {
         this.income = income;
       },
