@@ -35,4 +35,10 @@ export class FeeService {
       .set('id', id);
     return this.http.put<FeeBody>(this.backBaseHost+"fee/update",fee, {params});
   }
+
+  deleteFee(id : number) {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.delete(this.backBaseHost+"fee/deleteById", {params});
+  }
 }

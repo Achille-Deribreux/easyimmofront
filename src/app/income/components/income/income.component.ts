@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IncomeService} from "../../income.service";
 import {IncomeBody} from "../../models/income-body.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-income',
@@ -11,8 +11,9 @@ import {ActivatedRoute} from "@angular/router";
 export class IncomeComponent implements OnInit {
 
   income!: IncomeBody;
+  incomeId!: number;
 
-  constructor(private incomeService: IncomeService, private route:ActivatedRoute) { }
+  constructor(private incomeService: IncomeService, private route:ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.incomeService.getIncome(this.route.snapshot.params['id']).subscribe({
@@ -21,5 +22,13 @@ export class IncomeComponent implements OnInit {
       },
       error: (err) => {console.log(err);}
     });
+
+    this.incomeId = this.route.snapshot.params['id'];
+  }
+
+  deleteIncome(incomeId: number):void {
+    this.incomeId = incomeId;
+    this.incomeService.deleteIncome(incomeId).subscribe();
+    this.router.navigateByUrl('incomes');
   }
 }

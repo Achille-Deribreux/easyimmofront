@@ -1,11 +1,11 @@
 <ng-container *ngIf="income!=null">
   <div class="buttons-container">
-    <a routerLink="/income/update/{{income.id}}">
+    <a routerLink="/income/update/{{incomeId}}">
       <button mat-fab color="primary">
         <mat-icon>edit</mat-icon>
       </button>
     </a>
-    <button mat-fab color="warn">
+    <button mat-fab color="warn" (click)="deleteIncome(incomeId)">
       <mat-icon>delete</mat-icon>
     </button>
   </div>

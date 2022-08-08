@@ -34,4 +34,10 @@ export class IncomeService {
       .set('id', id);
     return this.http.put<IncomeBody>(this.backBaseHost+"income/update",income, {params});
   }
+
+  deleteIncome(id : number) {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.delete(this.backBaseHost+"income/deleteById", {params});
+  }
 }

@@ -30,4 +30,9 @@ export class FeeComponent implements OnInit {
     this.router.navigateByUrl('property/'+this.fee.property.id);
   }
 
+  deleteFee(feeId: number):void {
+    this.feeId = feeId;
+    this.feeService.deleteFee(feeId).subscribe();
+    this.router.navigateByUrl('property/'+this.fee.property.id);
+  }
 }
