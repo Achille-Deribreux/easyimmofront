@@ -1,1 +1,23 @@
-<p>income works!</p>
+<ng-container *ngIf="income!=null">
+  <div class="buttons-container">
+    <a routerLink="/income/update/{{income.id}}">
+      <button mat-fab color="primary">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </a>
+    <button mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <div class="detailsContainer">
+    <div class="incomesDetailsContainer">
+      <h3>Income Details</h3>
+      <div class="subdiv">
+        <p><strong>Amount : </strong>{{income.amount | currency:'EUR':true}}</p>
+        <p><strong>Date : </strong>{{income.date | date}}</p>
+        <p><strong>Description : </strong>{{income.description}}</p>
+      </div>
+    </div>
+  </div>
+</ng-container>
