@@ -18,7 +18,7 @@ import * as fr from '@angular/common/locales/fr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MatListModule} from "@angular/material/list";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { IncomeTableComponent } from './income/components/income-table/income-table.component';
@@ -47,6 +47,9 @@ import { FeeFormComponent } from './fee/components/fee-form/fee-form.component';
 import { EditFeeComponent } from './fee/components/edit-fee/edit-fee.component';
 import { EditIncomeComponent } from './income/components/edit-income/edit-income.component';
 import { EditReservationComponent } from './reservation/components/edit-reservation/edit-reservation.component';
+import { LoginComponent } from './user/login/components/login/login.component';
+import { LoginHeaderComponent } from './user/login/components/login-header/login-header.component';
+import {InterceptorService} from "./user/login/InterceptorService";
 
 @NgModule({
   declarations: [
@@ -75,7 +78,9 @@ import { EditReservationComponent } from './reservation/components/edit-reservat
     FeeFormComponent,
     EditFeeComponent,
     EditIncomeComponent,
-    EditReservationComponent
+    EditReservationComponent,
+    LoginComponent,
+    LoginHeaderComponent
   ],
     imports: [
         BrowserModule,
@@ -101,7 +106,10 @@ import { EditReservationComponent } from './reservation/components/edit-reservat
     ],
   providers: [
     MatDatepickerModule,
-    { provide: LOCALE_ID, useValue: 'fr-FR'}
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+    {
+      provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })
