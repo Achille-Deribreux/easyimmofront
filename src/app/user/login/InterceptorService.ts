@@ -24,7 +24,6 @@ export class InterceptorService implements HttpInterceptor {
           .append('Accept', 'application/json')
           .append('Access-Control-Allow-Origin', '*')
           .append('Content-Type',  'application/json')
-          .append('Content-Type',  'application/json')
       });
 
     return next.handle(req);

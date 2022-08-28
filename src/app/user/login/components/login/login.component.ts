@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl} from "@angular/forms";
-import * as bcrypt from 'bcryptjs';
 import {User} from "../../models/user-model";
 import {LoginService} from "../../login.service";
 

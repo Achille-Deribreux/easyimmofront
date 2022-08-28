@@ -1,5 +1,5 @@
+<h4>Login</h4>
 <form [formGroup]="formValues" (ngSubmit)="onSubmit()">
-
   <mat-form-field appearance="fill">
     <mat-label>Username</mat-label>
     <input formControlName="username" matInput placeholder="username">
@@ -10,6 +10,7 @@
     <mat-label>password</mat-label>
     <input formControlName="password" matInput placeholder="password">
   </mat-form-field>
+  <p>Do not have an account ? <a routerLink="/register">Register here</a></p>
 
   <mat-card-actions>
     <button mat-raised-button color="primary" type="submit">Submit</button>

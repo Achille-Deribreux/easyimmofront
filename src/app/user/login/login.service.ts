@@ -17,12 +17,7 @@ export class LoginService {
   backDevHost = "http://localhost:8080/";
 
   login (user:User) : void {
-    let headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Access-Control-Allow-Header', '*')
-      .set( 'Accept', 'application/json', )
-      .set('Access-Control-Allow-Origin', '*');
-    this.http.post("http://localhost:8080/login", user,{'headers':headers, observe: 'response'})
+    this.http.post("http://localhost:8080/login", user,{ observe: 'response'})
       .subscribe(resp => {
         if(resp.status === 200){
           sessionStorage.setItem('token', <string>resp.headers.get('Authorization'));
@@ -30,5 +25,14 @@ export class LoginService {
         }
       });
 }
+
+  register (user:User) : void {
+    this.http.post("http://localhost:8080/user/register", user,{ observe: 'response'})
+      .subscribe(resp => {
+        if(resp.status === 201){
+          this.router.navigate(['/']);
+        }
+      });
+  }
 
 }

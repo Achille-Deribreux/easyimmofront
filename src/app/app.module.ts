@@ -48,8 +48,8 @@ import { EditFeeComponent } from './fee/components/edit-fee/edit-fee.component';
 import { EditIncomeComponent } from './income/components/edit-income/edit-income.component';
 import { EditReservationComponent } from './reservation/components/edit-reservation/edit-reservation.component';
 import { LoginComponent } from './user/login/components/login/login.component';
-import { LoginHeaderComponent } from './user/login/components/login-header/login-header.component';
 import {InterceptorService} from "./user/login/InterceptorService";
+import { RegisterComponent } from './user/login/components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,7 @@ import {InterceptorService} from "./user/login/InterceptorService";
     EditIncomeComponent,
     EditReservationComponent,
     LoginComponent,
-    LoginHeaderComponent
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
