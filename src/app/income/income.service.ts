@@ -16,7 +16,7 @@ export class IncomeService {
   backDevHost = "http://localhost:8080/";
 
   getAllIncomes(): Observable<IncomeSummary[]> {
-    return this.http.get<IncomeSummary[]>(this.backDevHost+'income/getAll');
+    return this.http.get<IncomeSummary[]>(this.backBaseHost+'income/getAll');
   }
 
   getIncome(id:number) : Observable<IncomeBody> {
