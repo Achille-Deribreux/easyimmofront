@@ -30,7 +30,7 @@ export class LoginService {
     this.http.post(this.backBaseHost+"user/register", user,{ observe: 'response'})
       .subscribe(resp => {
         if(resp.status === 201){
-          this.router.navigate(['/']);
+          this.login(user);
         }
       });
   }
