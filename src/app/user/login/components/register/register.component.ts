@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
   })
 
   onSubmit() {
-    //let user : User = new User(this.formValues.value.username, bcrypt.hashSync(this.formValues.value.password, 10));
     let user : User = new User(this.formValues.value.username, this.formValues.value.password);
     this.loginService.register(user);
   }
