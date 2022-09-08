@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {PropertySummary} from "./models/property-summary.model";
 import {PropertyDetails} from "./models/property-details.model";
-import {Observable} from "rxjs";
+import {Observable, Subject, tap} from "rxjs";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {PropertyBody} from "./models/property-body.model";
 
@@ -15,6 +15,12 @@ export class PropertyService {
 
   backBaseHost = "https://easy-immo-back.herokuapp.com/";
   backDevHost = "http://localhost:8080/";
+
+  private _refreshRequired = new Subject<void>();
+
+  get RefreshRequired(){
+    return this._refreshRequired;
+  }
 
   getAllProperties() : Observable<PropertySummary[]> {
     return this.http.get<PropertySummary[]>(this.backBaseHost+"property/getAll");
@@ -32,5 +38,15 @@ export class PropertyService {
     const params = new HttpParams()
       .set('id', id);
     return this.http.put<PropertyBody>(this.backBaseHost+"property/update",property, {params});
+  }
+
+  deleteProperty(id : number) {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.delete(this.backBaseHost+"property/deleteById", {params}).pipe(
+      tap(() => {
+        this.RefreshRequired.next();
+      })
+    );
   }
 }
