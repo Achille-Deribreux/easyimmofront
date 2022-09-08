@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ReservationSummary} from "./model/reservation-summary.model";
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, Subject, tap} from "rxjs";
 import {ReservationBody} from "./model/reservation-body.model";
 import {ReservationDetail} from "./model/reservation-detail.model";
 
@@ -10,11 +10,17 @@ import {ReservationDetail} from "./model/reservation-detail.model";
 })
 export class ReservationService {
 
+  constructor(private http:HttpClient) {}
+
   backBaseHost = "https://easy-immo-back.herokuapp.com/";
   backDevHost = "http://localhost:8080/";
 
- constructor(private http:HttpClient) {
- }
+  private _refreshRequired = new Subject<void>();
+
+  get RefreshRequired(){
+    return this._refreshRequired;
+  }
+
   getAllReservations() : Observable<ReservationSummary[]> {
     return this.http.get<ReservationSummary[]>(this.backBaseHost+"reservation/getAll");
   }
@@ -33,5 +39,13 @@ export class ReservationService {
     return this.http.put<ReservationBody>(this.backBaseHost+"reservation/update",reservation, {params});
   }
 
-
+  deleteReservation(id:number) {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.delete(this.backBaseHost+"reservation/deleteById", {params}).pipe(
+      tap(() => {
+        this.RefreshRequired.next();
+      })
+    )
+  }
 }

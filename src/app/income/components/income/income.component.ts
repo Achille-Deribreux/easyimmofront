@@ -24,6 +24,8 @@ export class IncomeComponent implements OnInit {
     });
 
     this.incomeId = this.route.snapshot.params['id'];
+
+    this.incomeService.RefreshRequired.subscribe();
   }
 
   deleteIncome(incomeId: number):void {

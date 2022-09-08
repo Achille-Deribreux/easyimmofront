@@ -1,11 +1,11 @@
 <ng-container *ngIf="reservation!=null">
   <div class="buttons-container">
-    <a routerLink="/reservation/update/{{reservation.id}}">
+    <a routerLink="/reservation/update/{{reservationId}}">
       <button mat-fab color="primary">
         <mat-icon>edit</mat-icon>
       </button>
     </a>
-    <button mat-fab color="warn">
+    <button mat-fab color="warn" (click)="deleteReservation(reservationId)">
       <mat-icon>delete</mat-icon>
     </button>
   </div>
