@@ -24,6 +24,8 @@ export class FeeComponent implements OnInit {
     });
 
     this.feeId = this.route.snapshot.params['id'];
+
+    this.feeService.RefreshRequired.subscribe();
   }
 
   redirectToProperty():void {

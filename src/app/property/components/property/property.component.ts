@@ -29,7 +29,7 @@ export class PropertyComponent implements OnInit {
 
     this.propertyId = this.route.snapshot.params['id'];
 
-    this.propertyService.RefreshRequired.subscribe()
+    this.propertyService.RefreshRequired.subscribe();
   }
 
   getBankLoanPercentage(refundedAmount: number, totalAmount : number): number {
