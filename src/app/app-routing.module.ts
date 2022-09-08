@@ -17,6 +17,8 @@ import {EditPropertyComponent} from "./property/components/edit-property/edit-pr
 import {EditFeeComponent} from "./fee/components/edit-fee/edit-fee.component";
 import {EditIncomeComponent} from "./income/components/edit-income/edit-income.component";
 import {EditReservationComponent} from "./reservation/components/edit-reservation/edit-reservation.component";
+import {LoginComponent} from "./user/login/components/login/login.component";
+import {RegisterComponent} from "./user/login/components/register/register.component";
 
 const routes: Routes = [
   {path : 'reservations', component : ReservationListComponent},
@@ -35,7 +37,9 @@ const routes: Routes = [
   {path : 'income/update/:id', component : EditIncomeComponent},
   {path : 'incomes', component : IncomeListComponent},
   {path : 'income/:id', component : IncomeComponent},
-  {path : '', component : HomeComponent}
+  {path : 'home', component : HomeComponent},
+  {path : 'register', component : RegisterComponent},
+  {path : '', component : LoginComponent}
 ];
 
 @NgModule({
