@@ -11,7 +11,7 @@ import { IncomeHomeComponent } from './income/components/income-home/income-home
 import { FeeComponent } from './fee/components/fee/fee.component';
 import { FeeHomeComponent } from './fee/components/fee-home/fee-home.component';
 import { ReservationComponent } from './reservation/components/reservation/reservation.component';
-import { ReservationListComponent } from './reservation/components/reservation-list/reservation-list.component';
+import { ReservationHomeComponent } from './reservation/components/reservation-home/reservation-home.component';
 import { HeaderComponent } from './header/header.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
@@ -62,7 +62,7 @@ import { RegisterComponent } from './user/login/components/register/register.com
     FeeComponent,
     FeeHomeComponent,
     ReservationComponent,
-    ReservationListComponent,
+    ReservationHomeComponent,
     HeaderComponent,
     IncomeTableComponent,
     FeeTableComponent,

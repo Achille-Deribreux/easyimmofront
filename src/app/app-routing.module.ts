@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
-import {ReservationListComponent} from "./reservation/components/reservation-list/reservation-list.component";
+import {ReservationHomeComponent} from "./reservation/components/reservation-home/reservation-home.component";
 import {PropertyHomeComponent} from "./property/components/property-home/property-home.component";
 import {FeeHomeComponent} from "./fee/components/fee-home/fee-home.component";
 import {IncomeHomeComponent} from "./income/components/income-home/income-home.component";
@@ -21,7 +21,7 @@ import {LoginComponent} from "./user/login/components/login/login.component";
 import {RegisterComponent} from "./user/login/components/register/register.component";
 
 const routes: Routes = [
-  {path : 'reservations', component : ReservationListComponent},
+  {path : 'reservations', component : ReservationHomeComponent},
   {path : 'reservation/add', component : AddReservationComponent},
   {path : 'reservation/update/:id', component : EditReservationComponent},
   {path : 'reservation/:id', component : ReservationComponent},

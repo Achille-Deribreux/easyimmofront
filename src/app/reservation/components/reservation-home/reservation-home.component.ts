@@ -4,10 +4,10 @@ import {ReservationService} from "../../reservation.service";
 
 @Component({
   selector: 'app-reservation-list',
-  templateUrl: './reservation-list.component.html',
-  styleUrls: ['./reservation-list.component.scss']
+  templateUrl: './reservation-home.component.html',
+  styleUrls: ['./reservation-home.component.scss']
 })
-export class ReservationListComponent implements OnInit {
+export class ReservationHomeComponent implements OnInit {
 
   constructor(private reservationService : ReservationService) { }
 
