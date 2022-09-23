@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/components/property/property.component';
-import { PropertyListComponent } from './property/components/property-list/property-list.component';
+import { PropertyHomeComponent } from './property/components/property-home/property-home.component';
 import { IncomeComponent } from './income/components/income/income.component';
 import { IncomeListComponent } from './income/components/income-list/income-list.component';
 import { FeeComponent } from './fee/components/fee/fee.component';
@@ -56,7 +56,7 @@ import { RegisterComponent } from './user/login/components/register/register.com
     AppComponent,
     HomeComponent,
     PropertyComponent,
-    PropertyListComponent,
+    PropertyHomeComponent,
     IncomeComponent,
     IncomeListComponent,
     FeeComponent,
