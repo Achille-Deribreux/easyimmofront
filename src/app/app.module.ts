@@ -9,7 +9,7 @@ import { PropertyHomeComponent } from './property/components/property-home/prope
 import { IncomeComponent } from './income/components/income/income.component';
 import { IncomeHomeComponent } from './income/components/income-home/income-home.component';
 import { FeeComponent } from './fee/components/fee/fee.component';
-import { FeeListComponent } from './fee/components/fee-list/fee-list.component';
+import { FeeHomeComponent } from './fee/components/fee-home/fee-home.component';
 import { ReservationComponent } from './reservation/components/reservation/reservation.component';
 import { ReservationListComponent } from './reservation/components/reservation-list/reservation-list.component';
 import { HeaderComponent } from './header/header.component';
@@ -60,7 +60,7 @@ import { RegisterComponent } from './user/login/components/register/register.com
     IncomeComponent,
     IncomeHomeComponent,
     FeeComponent,
-    FeeListComponent,
+    FeeHomeComponent,
     ReservationComponent,
     ReservationListComponent,
     HeaderComponent,

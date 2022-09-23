@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {ReservationListComponent} from "./reservation/components/reservation-list/reservation-list.component";
 import {PropertyHomeComponent} from "./property/components/property-home/property-home.component";
-import {FeeListComponent} from "./fee/components/fee-list/fee-list.component";
+import {FeeHomeComponent} from "./fee/components/fee-home/fee-home.component";
 import {IncomeHomeComponent} from "./income/components/income-home/income-home.component";
 import {PropertyComponent} from "./property/components/property/property.component";
 import {IncomeComponent} from "./income/components/income/income.component";
@@ -29,7 +29,7 @@ const routes: Routes = [
   {path : 'property/add', component : AddPropertyComponent},
   {path : 'property/update/:id', component : EditPropertyComponent},
   {path : 'property/:id', component : PropertyComponent},
-  {path : 'fees', component : FeeListComponent},
+  {path : 'fees', component : FeeHomeComponent},
   {path : 'fee/add', component : AddFeeComponent},
   {path : 'fee/update/:id', component : EditFeeComponent},
   {path : 'fee/:id', component : FeeComponent},
