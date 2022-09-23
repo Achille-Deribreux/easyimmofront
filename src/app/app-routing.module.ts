@@ -4,7 +4,7 @@ import {HomeComponent} from "./home/home.component";
 import {ReservationListComponent} from "./reservation/components/reservation-list/reservation-list.component";
 import {PropertyHomeComponent} from "./property/components/property-home/property-home.component";
 import {FeeListComponent} from "./fee/components/fee-list/fee-list.component";
-import {IncomeListComponent} from "./income/components/income-list/income-list.component";
+import {IncomeHomeComponent} from "./income/components/income-home/income-home.component";
 import {PropertyComponent} from "./property/components/property/property.component";
 import {IncomeComponent} from "./income/components/income/income.component";
 import {FeeComponent} from "./fee/components/fee/fee.component";
@@ -35,7 +35,7 @@ const routes: Routes = [
   {path : 'fee/:id', component : FeeComponent},
   {path : 'income/add', component : AddIncomeComponent},
   {path : 'income/update/:id', component : EditIncomeComponent},
-  {path : 'incomes', component : IncomeListComponent},
+  {path : 'incomes', component : IncomeHomeComponent},
   {path : 'income/:id', component : IncomeComponent},
   {path : 'home', component : HomeComponent},
   {path : 'register', component : RegisterComponent},

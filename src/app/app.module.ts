@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/components/property/property.component';
 import { PropertyHomeComponent } from './property/components/property-home/property-home.component';
 import { IncomeComponent } from './income/components/income/income.component';
-import { IncomeListComponent } from './income/components/income-list/income-list.component';
+import { IncomeHomeComponent } from './income/components/income-home/income-home.component';
 import { FeeComponent } from './fee/components/fee/fee.component';
 import { FeeListComponent } from './fee/components/fee-list/fee-list.component';
 import { ReservationComponent } from './reservation/components/reservation/reservation.component';
@@ -58,7 +58,7 @@ import { RegisterComponent } from './user/login/components/register/register.com
     PropertyComponent,
     PropertyHomeComponent,
     IncomeComponent,
-    IncomeListComponent,
+    IncomeHomeComponent,
     FeeComponent,
     FeeListComponent,
     ReservationComponent,

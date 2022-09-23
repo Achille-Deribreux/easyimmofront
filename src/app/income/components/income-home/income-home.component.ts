@@ -4,10 +4,10 @@ import {IncomeService} from "../../income.service";
 
 @Component({
   selector: 'app-income-list',
-  templateUrl: './income-list.component.html',
-  styleUrls: ['./income-list.component.scss']
+  templateUrl: './income-home.component.html',
+  styleUrls: ['./income-home.component.scss']
 })
-export class IncomeListComponent implements OnInit {
+export class IncomeHomeComponent implements OnInit {
 
   constructor(private incomeService : IncomeService) { }
 
