@@ -29,6 +29,7 @@ export class IncomeFormComponent implements OnInit {
     date:new FormControl(''),
     description:new FormControl(''),
     propertyId:new FormControl(''),
+    incomeType:new FormControl('')
   })
 
   ngOnInit(): void {
@@ -39,7 +40,8 @@ export class IncomeFormComponent implements OnInit {
           amount:new FormControl(income.amount),
           date:new FormControl(new Date(income.date)),
           description:new FormControl(income.description),
-          propertyId:new FormControl(income.propertyId),
+          propertyId:new FormControl(income.property.id),
+          incomeType:new FormControl(income.incomeType)
         })
       });
     }
@@ -52,7 +54,7 @@ export class IncomeFormComponent implements OnInit {
 
   onSubmit() {
     const value = this.formValues.value;
-    const newIncome = new IncomeBody(value.amount, value.date, value.description, value.propertyId);
+    const newIncome = new IncomeBody(value.amount, value.date, value.description,value.propertyId,value.incomeType);
     if(this.submitCase === 'add') {
       this.incomeService.addIncome(newIncome).pipe(tap(() => this.router.navigateByUrl("/incomes"))).subscribe();
     }

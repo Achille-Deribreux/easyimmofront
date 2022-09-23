@@ -4,6 +4,7 @@ export class IncomeBody {
     public date : Date,
     public description : string,
     public propertyId : number,
+    public incomeType:String,
     public id? : number
   ) {
 

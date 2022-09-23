@@ -25,6 +25,15 @@
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Income Type</mat-label>
+    <mat-select formControlName="incomeType">
+      <mat-option value="LONGRENT"> Long rent</mat-option>
+      <mat-option value="SHORTRENT"> Short rent</mat-option>
+      <mat-option value="EXCEPTIONAL"> Exceptional</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <mat-card-actions>
     <button mat-raised-button color="primary" type="submit">Submit</button>
   </mat-card-actions>
