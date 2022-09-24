@@ -4,10 +4,10 @@ import {FeeSummary} from "../../model/fee-summary.model";
 
 @Component({
   selector: 'app-fee-list',
-  templateUrl: './fee-list.component.html',
-  styleUrls: ['./fee-list.component.scss']
+  templateUrl: './fee-home.component.html',
+  styleUrls: ['./fee-home.component.scss']
 })
-export class FeeListComponent implements OnInit {
+export class FeeHomeComponent implements OnInit {
 
   constructor(private feeService : FeeService) { }
 
