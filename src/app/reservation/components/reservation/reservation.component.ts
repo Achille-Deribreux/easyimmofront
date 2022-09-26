@@ -11,7 +11,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ReservationComponent implements OnInit {
 
   reservation! : ReservationDetail;
-  reservationId!: number;
   displayedFeesColumns: string[] = ['date','supplier',"amount","button"];
 
   constructor(private reservationService:ReservationService, private route:ActivatedRoute, private router:Router) { }
@@ -24,7 +23,7 @@ export class ReservationComponent implements OnInit {
       error: (err) => {console.log(err);}
     });
 
-    this.reservationId = this.route.snapshot.params['id'];
+    this.reservation.id = this.route.snapshot.params['id'];
 
     this.reservationService.RefreshRequired.subscribe();
   }
@@ -33,9 +32,8 @@ export class ReservationComponent implements OnInit {
     this.router.navigateByUrl("property/"+this.reservation.property.id);
   }
 
-  deleteReservation(reservationId: number): void {
-    this.reservationId = reservationId;
-    this.reservationService.deleteReservation(reservationId).subscribe();
+  deleteReservation(id: number): void {
+    this.reservationService.deleteReservation(id).subscribe();
     this.router.navigateByUrl('reservations');
   }
 }

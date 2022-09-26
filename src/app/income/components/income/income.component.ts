@@ -11,7 +11,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class IncomeComponent implements OnInit {
 
   income!: IncomeBody;
-  incomeId!: number;
 
   constructor(private incomeService: IncomeService, private route:ActivatedRoute, private router: Router) { }
 
@@ -23,14 +22,13 @@ export class IncomeComponent implements OnInit {
       error: (err) => {console.log(err);}
     });
 
-    this.incomeId = this.route.snapshot.params['id'];
+    this.income.id = this.route.snapshot.params['id'];
 
     this.incomeService.RefreshRequired.subscribe();
   }
 
-  deleteIncome(incomeId: number):void {
-    this.incomeId = incomeId;
-    this.incomeService.deleteIncome(incomeId).subscribe();
+  deleteIncome(id: number):void {
+    this.incomeService.deleteIncome(id).subscribe();
     this.router.navigateByUrl('incomes');
   }
 }

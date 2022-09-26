@@ -11,7 +11,6 @@ import {ActivatedRoute, Router } from "@angular/router";
 export class FeeComponent implements OnInit {
 
   fee!: FeeDetail;
-  feeId!: number;
 
   constructor(private feeService: FeeService, private route: ActivatedRoute, private router: Router ) { }
 
@@ -23,8 +22,6 @@ export class FeeComponent implements OnInit {
     error: (err) => {console.log(err);}
     });
 
-    this.feeId = this.route.snapshot.params['id'];
-
     this.feeService.RefreshRequired.subscribe();
   }
 
@@ -32,9 +29,8 @@ export class FeeComponent implements OnInit {
     this.router.navigateByUrl('property/'+this.fee.property.id);
   }
 
-  deleteFee(feeId: number):void {
-    this.feeId = feeId;
-    this.feeService.deleteFee(feeId).subscribe();
+  deleteFee(id: number):void {
+    this.feeService.deleteFee(id).subscribe();
     this.router.navigateByUrl('property/'+this.fee.property.id);
   }
 }

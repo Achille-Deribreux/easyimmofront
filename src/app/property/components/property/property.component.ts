@@ -11,7 +11,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class PropertyComponent implements OnInit {
 
   property!: PropertyDetails;
-  propertyId!: number;
 
   displayedIncomeColumns: string[] = ['date','description',"amount","button"];
   displayedFeesColumns: string[] = ['date','supplier',"amount","button"];
@@ -27,7 +26,7 @@ export class PropertyComponent implements OnInit {
      error: (err) => {console.log(err);}
     });
 
-    this.propertyId = this.route.snapshot.params['id'];
+    this.property.id = this.route.snapshot.params['id'];
 
     this.propertyService.RefreshRequired.subscribe();
   }
@@ -36,9 +35,8 @@ export class PropertyComponent implements OnInit {
     return (refundedAmount/totalAmount)*100;
   }
 
-  deleteProperty(propertyId: number): void {
-    this.propertyId = propertyId;
-    this.propertyService.deleteProperty(propertyId).subscribe();
+  deleteProperty(id: number): void {
+    this.propertyService.deleteProperty(id).subscribe();
     this.router.navigateByUrl('properties');
   }
 }
