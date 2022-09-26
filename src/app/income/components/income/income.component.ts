@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IncomeService} from "../../income.service";
-import {IncomeBody} from "../../models/income-body.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { IncomeDetails } from '../../models/income-details.model';
 
 @Component({
