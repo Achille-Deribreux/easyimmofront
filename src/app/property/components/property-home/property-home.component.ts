@@ -6,10 +6,10 @@ import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-property-list',
-  templateUrl: './property-list.component.html',
-  styleUrls: ['./property-list.component.scss']
+  templateUrl: './property-home.component.html',
+  styleUrls: ['./property-home.component.scss']
 })
-export class PropertyListComponent implements OnInit {
+export class PropertyHomeComponent implements OnInit {
 
   properties!: Observable<PropertySummary[]>;
   displayedColumns: string[] = ['type', 'name', 'address',"button"];

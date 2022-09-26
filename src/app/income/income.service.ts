@@ -3,7 +3,8 @@ import {IncomeSummary} from "./models/income-summary.model";
 import {Router} from "@angular/router";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {IncomeBody} from "./models/income-body.model";
-import {Observable, Subject, tap} from "rxjs";
+import {Observable} from "rxjs";
+import { IncomeDetails } from './models/income-details.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +26,10 @@ export class IncomeService {
     return this.http.get<IncomeSummary[]>(this.backBaseHost+'income/getAll');
   }
 
-  getIncome(id:number) : Observable<IncomeBody> {
+  getIncome(id:number) : Observable<IncomeDetails> {
     const params = new HttpParams()
       .set('id', id);
-    return this.http.get<IncomeBody>(this.backBaseHost+"income/getById", {params});
+    return this.http.get<IncomeDetails>(this.backBaseHost+"income/getById", {params});
   }
 
   addIncome(income: IncomeBody)  : Observable<IncomeBody> {

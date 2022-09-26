@@ -5,13 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PropertyComponent } from './property/components/property/property.component';
-import { PropertyListComponent } from './property/components/property-list/property-list.component';
+import { PropertyHomeComponent } from './property/components/property-home/property-home.component';
 import { IncomeComponent } from './income/components/income/income.component';
-import { IncomeListComponent } from './income/components/income-list/income-list.component';
+import { IncomeHomeComponent } from './income/components/income-home/income-home.component';
 import { FeeComponent } from './fee/components/fee/fee.component';
-import { FeeListComponent } from './fee/components/fee-list/fee-list.component';
+import { FeeHomeComponent } from './fee/components/fee-home/fee-home.component';
 import { ReservationComponent } from './reservation/components/reservation/reservation.component';
-import { ReservationListComponent } from './reservation/components/reservation-list/reservation-list.component';
+import { ReservationHomeComponent } from './reservation/components/reservation-home/reservation-home.component';
 import { HeaderComponent } from './header/header.component';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
@@ -56,13 +56,13 @@ import { RegisterComponent } from './user/login/components/register/register.com
     AppComponent,
     HomeComponent,
     PropertyComponent,
-    PropertyListComponent,
+    PropertyHomeComponent,
     IncomeComponent,
-    IncomeListComponent,
+    IncomeHomeComponent,
     FeeComponent,
-    FeeListComponent,
+    FeeHomeComponent,
     ReservationComponent,
-    ReservationListComponent,
+    ReservationHomeComponent,
     HeaderComponent,
     IncomeTableComponent,
     FeeTableComponent,
