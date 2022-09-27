@@ -15,7 +15,13 @@ export class FeeHomeComponent implements OnInit {
   displayedColumns: string[] = ['date', 'amount', 'supplier',"button"];
 
   ngOnInit(): void {
-     this.feeService.getAllFees().subscribe({
+    this.feeService.RefreshRequired.subscribe(() => { this.getAllFees(); });
+
+    this.getAllFees();
+  }
+
+  private getAllFees() {
+    this.feeService.getAllFees().subscribe({
         next: (fees: FeeSummary[]) => {
           this.fees = fees;
         }

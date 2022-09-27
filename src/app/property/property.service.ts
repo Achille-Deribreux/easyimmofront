@@ -10,7 +10,6 @@ import {PropertyBody} from "./models/property-body.model";
 })
 export class PropertyService {
 
-
   constructor(private http : HttpClient) { }
 
   backBaseHost = "https://easy-immo-back.herokuapp.com/";
@@ -43,10 +42,6 @@ export class PropertyService {
   deleteProperty(id : number) {
     const params = new HttpParams()
       .set('id', id);
-    return this.http.delete(this.backBaseHost+"property/deleteById", {params}).pipe(
-      tap(() => {
-        this.RefreshRequired.next();
-      })
-    );
+    return this.http.delete(this.backBaseHost+"property/deleteById", {params}).pipe(tap(() => { this._refreshRequired.next(); }));
   }
 }

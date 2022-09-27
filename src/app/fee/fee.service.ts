@@ -45,10 +45,6 @@ export class FeeService {
   deleteFee(id : number) {
     const params = new HttpParams()
       .set('id', id);
-    return this.http.delete(this.backBaseHost+"fee/deleteById", {params}).pipe(
-      tap(() => {
-        this.RefreshRequired.next();
-      })
-    );
+    return this.http.delete(this.backBaseHost+"fee/deleteById", {params}).pipe(tap(() => { this._refreshRequired.next(); })).subscribe();
   }
 }

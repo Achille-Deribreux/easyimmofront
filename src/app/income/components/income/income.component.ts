@@ -28,7 +28,7 @@ export class IncomeComponent implements OnInit {
   }
 
   deleteIncome(id: number):void {
-    this.incomeService.deleteIncome(id).subscribe();
+    this.incomeService.deleteIncome(id);
     this.router.navigateByUrl('incomes');
   }
 }

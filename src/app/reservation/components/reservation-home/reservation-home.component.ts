@@ -15,11 +15,17 @@ export class ReservationHomeComponent implements OnInit {
   displayedColumns: string[] = ['propertyName', 'fromDate','toDate','price',"button"];
 
   ngOnInit(): void {
-     this.reservationService.getAllReservations().subscribe({
-        next: (reservations: ReservationSummary[]) => {
-          this.reservations = reservations;
-        }
-     });
+    this.reservationService.RefreshRequired.subscribe(() => { this.getAllReservations(); });
+
+    this.getAllReservations();
+  }
+
+  private getAllReservations() {
+    this.reservationService.getAllReservations().subscribe({
+      next: (reservations: ReservationSummary[]) => {
+        this.reservations = reservations;
+      }
+    });
   }
 
 }

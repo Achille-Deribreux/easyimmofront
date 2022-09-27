@@ -42,10 +42,6 @@ export class ReservationService {
   deleteReservation(id:number) {
     const params = new HttpParams()
       .set('id', id);
-    return this.http.delete(this.backBaseHost+"reservation/deleteById", {params}).pipe(
-      tap(() => {
-        this.RefreshRequired.next();
-      })
-    )
+    return this.http.delete(this.backBaseHost+"reservation/deleteById", {params}).pipe(tap(() => {this._refreshRequired.next()}));
   }
 }

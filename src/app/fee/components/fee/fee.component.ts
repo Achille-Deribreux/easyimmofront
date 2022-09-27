@@ -21,8 +21,6 @@ export class FeeComponent implements OnInit {
     },
     error: (err) => {console.log(err);}
     });
-
-    this.feeService.RefreshRequired.subscribe();
   }
 
   redirectToProperty():void {
@@ -30,7 +28,7 @@ export class FeeComponent implements OnInit {
   }
 
   deleteFee(id: number):void {
-    this.feeService.deleteFee(id).subscribe();
-    this.router.navigateByUrl('property/'+this.fee.property.id);
+    this.feeService.deleteFee(id);
+    this.router.navigateByUrl('fees');
   }
 }

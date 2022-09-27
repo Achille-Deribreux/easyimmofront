@@ -15,11 +15,17 @@ export class IncomeHomeComponent implements OnInit {
   displayedColumns: string[] = ['date', 'amount', 'description',"button"];
 
   ngOnInit(): void {
-     this.incomeService.getAllIncomes().subscribe({
-       next: (income: IncomeSummary[]) => {
-         this.incomes = income;
-       }
-     });
+    this.incomeService.RefreshRequired.subscribe(() => { this.getAllIncomes(); });
+
+    this.getAllIncomes();
+  }
+
+  private getAllIncomes() {
+    this.incomeService.getAllIncomes().subscribe({
+      next: (income: IncomeSummary[]) => {
+        this.incomes = income;
+      }
+    });
   }
 
 }

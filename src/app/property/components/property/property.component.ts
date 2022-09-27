@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {PropertyService} from "../../property.service";
 import {PropertyDetails} from "../../models/property-details.model";
 import {ActivatedRoute, Router} from "@angular/router";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-property',
@@ -27,8 +28,6 @@ export class PropertyComponent implements OnInit {
     });
 
     this.property.id = this.route.snapshot.params['id'];
-
-    this.propertyService.RefreshRequired.subscribe();
   }
 
   getBankLoanPercentage(refundedAmount: number, totalAmount : number): number {

@@ -24,8 +24,6 @@ export class ReservationComponent implements OnInit {
     });
 
     this.reservation.id = this.route.snapshot.params['id'];
-
-    this.reservationService.RefreshRequired.subscribe();
   }
 
   redirectToProperty():void {
