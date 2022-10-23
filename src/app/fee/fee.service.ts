@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {FeeSummary} from "./model/fee-summary.model";
 import {FeeBody} from "./model/fee-body.model";
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {Observable, Subject, tap} from "rxjs";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {Observable, pipe, Subject, tap} from "rxjs";
 import {FeeDetail} from "./model/fee-detail";
 
 @Injectable({
@@ -15,12 +15,6 @@ export class FeeService {
 
   backBaseHost = "https://easy-immo-back.herokuapp.com/";
   backDevHost = "http://localhost:8080/";
-
-  private _refreshRequired = new Subject<void>();
-
-  get RefreshRequired(){
-    return this._refreshRequired;
-  }
 
   getAllFees() : Observable<FeeSummary[]> {
     return this.http.get<FeeSummary[]>(this.backBaseHost+"fee/getAll");
@@ -44,7 +38,7 @@ export class FeeService {
 
   deleteFee(id : number) {
     const params = new HttpParams()
-      .set('id', id);
-    return this.http.delete(this.backBaseHost+"fee/deleteById", {params}).pipe(tap(() => { this._refreshRequired.next(); })).subscribe();
+      .set('id', id)
+    return this.http.delete(this.backBaseHost+"fee/deleteById", {params,responseType:'text'});
   }
 }

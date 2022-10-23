@@ -28,7 +28,6 @@ export class FeeComponent implements OnInit {
   }
 
   deleteFee(id: number):void {
-    this.feeService.deleteFee(id);
-    this.router.navigateByUrl('fees');
+    this.feeService.deleteFee(id).subscribe(() => this.router.navigateByUrl("fees"));
   }
 }
