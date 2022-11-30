@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {IncomeSummary} from "./models/income-summary.model";
 import {Router} from "@angular/router";
-import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {IncomeBody} from "./models/income-body.model";
-import {Observable} from "rxjs";
+import {Observable, Subject, tap} from "rxjs";
 import { IncomeDetails } from './models/income-details.model';
 
 @Injectable({
@@ -15,6 +15,12 @@ export class IncomeService {
 
   backBaseHost = "https://easy-immo-back.herokuapp.com/";
   backDevHost = "http://localhost:8080/";
+
+  private _refreshRequired = new Subject<void>();
+
+  get RefreshRequired(){
+    return this._refreshRequired;
+  }
 
   getAllIncomes(): Observable<IncomeSummary[]> {
     return this.http.get<IncomeSummary[]>(this.backBaseHost+'income/getAll');
@@ -34,5 +40,11 @@ export class IncomeService {
     const params = new HttpParams()
       .set('id', id);
     return this.http.put<IncomeBody>(this.backBaseHost+"income/update",income, {params});
+  }
+
+  deleteIncome(id : number) {
+    const params = new HttpParams()
+      .set('id', id);
+    return this.http.delete(this.backBaseHost+"income/deleteById", {params}).pipe(tap(() => { this._refreshRequired.next(); })).subscribe();
   }
 }

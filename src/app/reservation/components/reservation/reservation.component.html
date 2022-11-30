@@ -5,7 +5,7 @@
         <mat-icon>edit</mat-icon>
       </button>
     </a>
-    <button mat-fab color="warn">
+    <button mat-fab color="warn" (click)="deleteReservation(reservation.id)">
       <mat-icon>delete</mat-icon>
     </button>
   </div>
@@ -16,9 +16,7 @@
         <p><strong>Reservation date : </strong>{{reservation.reservationDate | date}}</p>
         <p><strong>From date : </strong>{{reservation.fromDate | date}}</p>
         <p><strong>To date : </strong>{{reservation.toDate | date}}</p>
-        <!--
-        CREATES A BUG BECAUSE OF CORRUP DATA, REMOVE COMMENT WHEN DB IS RESET
-        <p><strong>Reservation Price : </strong>{{reservation.income.amount | currency : 'EUR'}}</p>-->
+        <p><strong>Reservation Price : </strong>{{reservation.income.amount | currency : 'EUR'}}</p>
       </div>
     </div>
 

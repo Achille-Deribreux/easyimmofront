@@ -22,10 +22,16 @@ export class ReservationComponent implements OnInit {
       },
       error: (err) => {console.log(err);}
     });
+
+    this.reservation.id = this.route.snapshot.params['id'];
   }
 
   redirectToProperty():void {
     this.router.navigateByUrl("property/"+this.reservation.property.id);
   }
 
+  deleteReservation(id: number): void {
+    this.reservationService.deleteReservation(id).subscribe();
+    this.router.navigateByUrl('reservations');
+  }
 }

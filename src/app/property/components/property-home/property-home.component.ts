@@ -17,6 +17,12 @@ export class PropertyHomeComponent implements OnInit {
   constructor(private propertyService: PropertyService, private router : Router) { }
 
   ngOnInit(): void {
+    this.propertyService.RefreshRequired.subscribe(() => { this.getAllProperties(); });
+
+    this.getAllProperties();
+  }
+
+  private getAllProperties() {
     this.properties = this.propertyService.getAllProperties();
   }
 

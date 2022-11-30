@@ -1,11 +1,11 @@
 <ng-container *ngIf="fee!=null">
   <div class="buttons-container">
-    <a routerLink="/fee/update/{{feeId}}">
+    <a routerLink="/fee/update/{{fee.id}}">
       <button mat-fab color="primary">
         <mat-icon>edit</mat-icon>
       </button>
     </a>
-    <button mat-fab color="warn">
+    <button mat-fab color="warn" (click)="deleteFee(fee.id)">
       <mat-icon>delete</mat-icon>
     </button>
   </div>

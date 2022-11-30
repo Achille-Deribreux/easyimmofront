@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {FeeSummary} from "./model/fee-summary.model";
 import {FeeBody} from "./model/fee-body.model";
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {Observable, pipe, Subject, tap} from "rxjs";
 import {FeeDetail} from "./model/fee-detail";
 
 @Injectable({
@@ -34,5 +34,11 @@ export class FeeService {
     const params = new HttpParams()
       .set('id', id);
     return this.http.put<FeeBody>(this.backBaseHost+"fee/update",fee, {params});
+  }
+
+  deleteFee(id : number) {
+    const params = new HttpParams()
+      .set('id', id)
+    return this.http.delete(this.backBaseHost+"fee/deleteById", {params,responseType:'text'});
   }
 }
